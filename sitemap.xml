@@ -22,4 +22,53 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://novabess.com/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://novabess.com/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://novabess.com/blog/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://novabess.com/blog/home-battery-buying-guide-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://novabess.com/blog/home-battery-buying-guide-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://novabess.com/blog/home-battery-buying-guide-2026.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://novabess.com/blog/portable-power-offgrid-construction.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://novabess.com/blog/portable-power-offgrid-construction.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://novabess.com/blog/portable-power-offgrid-construction.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://novabess.com/blog/solar-self-consumption-homewall.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://novabess.com/blog/solar-self-consumption-homewall.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://novabess.com/blog/solar-self-consumption-homewall.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://novabess.com/resources/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://novabess.com/resources/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://novabess.com/resources/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://novabess.com/resources/bess-certifications-explained.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://novabess.com/resources/bess-certifications-explained.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://novabess.com/resources/bess-certifications-explained.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://novabess.com/resources/novabess-vs-top-brands.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://novabess.com/resources/novabess-vs-top-brands.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://novabess.com/resources/novabess-vs-top-brands.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

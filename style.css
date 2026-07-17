@@ -110,10 +110,35 @@ a { color: inherit; text-decoration: none; }
 .footer-contact a { color: var(--gold-soft); }
 .footer-bar { border-top: 1px solid rgba(255,255,255,.1); text-align: center; padding: 16px; font-size: 13px; color: #8b9bb8; }
 
+/* ARTICLE / BLOG */
+.article { padding: 52px 0; }
+.article .wrap { max-width: 840px; margin: 0 auto; }
+.article .meta { color: var(--muted); font-size: 14px; margin-bottom: 10px; }
+.article h1 { font-size: 38px; line-height: 1.18; color: var(--navy-1); margin-bottom: 16px; }
+.article .lead-p { font-size: 18px; color: #34465e; margin-bottom: 6px; }
+.article h2 { font-size: 26px; color: var(--navy-1); margin: 38px 0 14px; }
+.article h3 { font-size: 20px; color: var(--navy-2); margin: 28px 0 10px; }
+.article p { font-size: 16px; color: #2a3548; margin-bottom: 16px; }
+.article ul, .article ol { margin: 0 0 18px 22px; }
+.article li { font-size: 16px; margin-bottom: 8px; color: #2a3548; }
+.takeaway { background: var(--bg-soft); border-left: 4px solid var(--gold); border-radius: 10px; padding: 20px 24px; margin: 26px 0; font-size: 17px; line-height: 1.6; color: var(--navy-1); font-weight: 500; }
+.takeaway b { color: var(--navy-2); }
+.ctable { width: 100%; border-collapse: collapse; margin: 22px 0; background: #fff; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; font-size: 15px; }
+.ctable th { background: var(--navy-1); color: #fff; text-align: left; padding: 13px 15px; }
+.ctable td { padding: 12px 15px; border-top: 1px solid var(--line); }
+.ctable tr:nth-child(even) td { background: var(--bg-soft); }
+.faq-item { border: 1px solid var(--line); border-radius: 10px; padding: 16px 20px; margin-bottom: 12px; }
+.faq-item h4 { color: var(--navy-1); font-size: 16px; margin-bottom: 6px; }
+.faq-item p { margin: 0; font-size: 15px; color: var(--muted); }
+.disclaimer { font-size: 13px; color: var(--muted); border-top: 1px dashed var(--line); margin-top: 30px; padding-top: 16px; }
+.tagrow { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; }
+.tag { background: rgba(20,58,122,.08); color: var(--navy-2); border-radius: 999px; padding: 5px 13px; font-size: 13px; font-weight: 600; }
+
 /* RESPONSIVE */
 @media (max-width: 880px) {
   .hero-inner, .product-inner, .contact-grid, .cards, .features { grid-template-columns: 1fr; }
   .hero h1 { font-size: 36px; }
   .nav-links { display: none; }
   .hero-stats { margin-top: 10px; }
+  .article h1 { font-size: 30px; }
 }

@@ -12,11 +12,15 @@
 - Global certifications: IEC 62619, CE, UN38.3, UL (selected models), ISO 9001. Ready for EU, AU, Middle East and Africa.
 - Cloud monitoring: app-based remote diagnostics and 7x24 status.
 
+## Blog
+- [Home Battery Storage Buying Guide 2026](https://novabess.com/blog/home-battery-buying-guide-2026.html): How to size a home battery by daily kWh and match it to backup, solar self-consumption or off-grid goals.
+- [Portable Power for Off-Grid & Construction Sites](https://novabess.com/blog/portable-power-offgrid-construction.html): Wheeled battery power vs diesel, specs and use cases for PowerBox.
+- [Solar Self-Consumption with HomeWall](https://novabess.com/blog/solar-self-consumption-homewall.html): Pair rooftop PV with a wall-mounted battery to use more of your own solar at night.
+
+## Resources
+- [BESS Certifications Explained](https://novabess.com/resources/bess-certifications-explained.html): What IEC 62619, UN38.3, CE and UL mean, and which markets each unlocks.
+- [NovaBESS vs Top Brands](https://novabess.com/resources/novabess-vs-top-brands.html): Spec comparison across capacity, cycle life, install type and certifications.
+
 ## Contact
 - Email: hello@novabess.com
 - Request a tailored quote: https://novabess.com/contact.html
-
-## Resources (coming soon)
-- Home Battery Storage Buying Guide 2026
-- Portable Power for Off-Grid & Construction Sites
-- BESS Certifications Explained: CE / IEC / UN38.3 / UL
