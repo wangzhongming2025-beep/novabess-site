@@ -85,4 +85,46 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://novabess-site.vercel.app/blog/how-long-do-home-batteries-last.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://novabess-site.vercel.app/blog/how-long-do-home-batteries-last.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://novabess-site.vercel.app/blog/how-long-do-home-batteries-last.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://novabess-site.vercel.app/blog/home-battery-sizing-calculator.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://novabess-site.vercel.app/blog/home-battery-sizing-calculator.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://novabess-site.vercel.app/blog/home-battery-sizing-calculator.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://novabess-site.vercel.app/blog/what-can-a-10kwh-battery-run.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://novabess-site.vercel.app/blog/what-can-a-10kwh-battery-run.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://novabess-site.vercel.app/blog/what-can-a-10kwh-battery-run.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://novabess-site.vercel.app/blog/home-battery-cost-payback-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://novabess-site.vercel.app/blog/home-battery-cost-payback-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://novabess-site.vercel.app/blog/home-battery-cost-payback-2026.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://novabess-site.vercel.app/resources/home-battery-vs-generator.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://novabess-site.vercel.app/resources/home-battery-vs-generator.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://novabess-site.vercel.app/resources/home-battery-vs-generator.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://novabess-site.vercel.app/resources/lifepo4-vs-lead-acid-home.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://novabess-site.vercel.app/resources/lifepo4-vs-lead-acid-home.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://novabess-site.vercel.app/resources/lifepo4-vs-lead-acid-home.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

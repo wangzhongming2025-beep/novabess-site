@@ -6,8 +6,8 @@
 
 ## Products
 - [HomeStack — Stackable ESS](https://novabess-site.vercel.app/products.html#homestack): 5 / 10 / 15 kWh modular residential battery. 51.2 V nominal, 43.2–58.4 V operating range, 100 A max continuous current, CAN/RS485, IP54, -25°C to +50°C. Parallel up to 12 stacks / 60 kWh. UN38.3 certified.
-- [HomeWall — Wall-Mounted Battery](https://novabess-site.vercel.app/products.html#homewall): 48 V wall-mounted lithium battery in 2.5 / 5.1 / 10.2 kWh (50 / 100 / 200 Ah). 5000 cycles at 80% DoD, 15-year design life, IP54, LCD display, parallel up to 15 units. CE, UN38.3, UL, IEC certified.
-- [PowerBox — Industrial Mobile Power](https://novabess-site.vercel.app/products.html#powerbox): 4.02 / 8.04 / 16.08 kWh wheeled portable power station. 12.8 / 25.6 / 51.2 V, 500 / 1000 / 1500 W, 314 Ah LFP cells, 80%–100% DOD, air-cooled, ≤75 dB(A). CE, UN38.3, UL, IEC certified.
+- [HomeWall — Wall-Mounted Battery](https://novabess-site.vercel.app/products.html#homewall): 48 V wall-mounted lithium battery in 2.5 / 5.1 / 10.2 kWh (50 / 100 / 200 Ah). 6,000 cycles at 80% DoD, 15-year design life, IP54, LCD display, parallel up to 15 units. CE, UN38.3, UL, IEC certified.
+- [PowerBox — Industrial Mobile Power](https://novabess-site.vercel.app/products.html#powerbox): 4.02 / 8.04 / 16.08 kWh wheeled portable power station. 12.8 / 25.6 / 51.2 V, 500 / 1000 / 1500 W, 314 Ah LFP cells, 80%–100% DoD, air-cooled, ≤75 dB(A). CE, UN38.3, UL, IEC certified.
 - [C&I and Container BESS](https://novabess-site.vercel.app/products.html#commercial): Air-cooled cabinet (672–864 VDC, 400 VAC), liquid-cooled cabinet (200–1000 kWh per cabinet, 728–949 VDC, ≥95% round-trip efficiency, LFP 314 Ah), and ISO 40 ft container systems for grid, commercial & industrial, renewable and microgrid projects.
 
 ## Product Catalog
@@ -24,10 +24,16 @@
 - [Home Battery Storage Buying Guide 2026](https://novabess-site.vercel.app/blog/home-battery-buying-guide-2026.html): How to size a home battery by daily kWh and match it to backup, solar self-consumption or off-grid goals.
 - [Portable Power for Off-Grid & Construction Sites](https://novabess-site.vercel.app/blog/portable-power-offgrid-construction.html): Wheeled battery power vs diesel, specs and use cases for PowerBox.
 - [Solar Self-Consumption with HomeWall](https://novabess-site.vercel.app/blog/solar-self-consumption-homewall.html): Pair rooftop PV with a wall-mounted battery to use more of your own solar at night.
+- [How Long Do Home Batteries Last?](https://novabess-site.vercel.app/blog/how-long-do-home-batteries-last.html): Cycle life vs calendar life, depth of discharge, warranty, and how to get 10+ years from a home battery.
+- [Home Battery Sizing Calculator](https://novabess-site.vercel.app/blog/home-battery-sizing-calculator.html): A 4-step method to size a home battery by daily kWh, overnight load and backup days.
+- [What Can a 10 kWh Battery Run?](https://novabess-site.vercel.app/blog/what-can-a-10kwh-battery-run.html): Realistic appliance load list and runtime for a 10 kWh home battery, including why AC changes the math.
+- [Home Battery Cost & Payback in 2026](https://novabess-site.vercel.app/blog/home-battery-cost-payback-2026.html): Equipment cost, what drives payback, and whether a battery pays off without solar.
 
 ## Resources
 - [BESS Certifications Explained](https://novabess-site.vercel.app/resources/bess-certifications-explained.html): What IEC 62619, UN38.3, CE and UL mean, and which markets each unlocks.
 - [NovaBESS vs Top Brands](https://novabess-site.vercel.app/resources/novabess-vs-top-brands.html): Spec comparison across capacity, cycle life, install type and certifications.
+- [Home Battery vs Generator](https://novabess-site.vercel.app/resources/home-battery-vs-generator.html): Battery vs generator for backup — noise, fuel, maintenance, startup, emissions and cost compared.
+- [LiFePO4 vs Lead-Acid for Home Storage](https://novabess-site.vercel.app/resources/lifepo4-vs-lead-acid-home.html): Cycle life, weight, efficiency, maintenance, safety and lifetime cost compared.
 
 ## Contact
 - Email: hello@novabess.com
