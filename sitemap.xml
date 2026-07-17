@@ -2,86 +2,86 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://novabess.com/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://novabess.com/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://novabess.com/"/>
+    <loc>https://novabess-site.vercel.app/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://novabess-site.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://novabess-site.vercel.app/"/>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://novabess.com/products.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://novabess.com/products.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://novabess.com/products.html"/>
+    <loc>https://novabess-site.vercel.app/products.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://novabess-site.vercel.app/products.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://novabess-site.vercel.app/products.html"/>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://novabess.com/about.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://novabess.com/about.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://novabess.com/about.html"/>
+    <loc>https://novabess-site.vercel.app/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://novabess-site.vercel.app/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://novabess-site.vercel.app/about.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://novabess.com/catalog.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://novabess.com/catalog.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://novabess.com/catalog.html"/>
+    <loc>https://novabess-site.vercel.app/catalog.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://novabess-site.vercel.app/catalog.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://novabess-site.vercel.app/catalog.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://novabess.com/contact.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://novabess.com/contact.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://novabess.com/contact.html"/>
+    <loc>https://novabess-site.vercel.app/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://novabess-site.vercel.app/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://novabess-site.vercel.app/contact.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://novabess.com/blog/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://novabess.com/blog/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://novabess.com/blog/"/>
+    <loc>https://novabess-site.vercel.app/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://novabess-site.vercel.app/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://novabess-site.vercel.app/blog/"/>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://novabess.com/blog/home-battery-buying-guide-2026.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://novabess.com/blog/home-battery-buying-guide-2026.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://novabess.com/blog/home-battery-buying-guide-2026.html"/>
+    <loc>https://novabess-site.vercel.app/blog/home-battery-buying-guide-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://novabess-site.vercel.app/blog/home-battery-buying-guide-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://novabess-site.vercel.app/blog/home-battery-buying-guide-2026.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://novabess.com/blog/portable-power-offgrid-construction.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://novabess.com/blog/portable-power-offgrid-construction.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://novabess.com/blog/portable-power-offgrid-construction.html"/>
+    <loc>https://novabess-site.vercel.app/blog/portable-power-offgrid-construction.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://novabess-site.vercel.app/blog/portable-power-offgrid-construction.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://novabess-site.vercel.app/blog/portable-power-offgrid-construction.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://novabess.com/blog/solar-self-consumption-homewall.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://novabess.com/blog/solar-self-consumption-homewall.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://novabess.com/blog/solar-self-consumption-homewall.html"/>
+    <loc>https://novabess-site.vercel.app/blog/solar-self-consumption-homewall.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://novabess-site.vercel.app/blog/solar-self-consumption-homewall.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://novabess-site.vercel.app/blog/solar-self-consumption-homewall.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://novabess.com/resources/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://novabess.com/resources/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://novabess.com/resources/"/>
+    <loc>https://novabess-site.vercel.app/resources/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://novabess-site.vercel.app/resources/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://novabess-site.vercel.app/resources/"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://novabess.com/resources/bess-certifications-explained.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://novabess.com/resources/bess-certifications-explained.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://novabess.com/resources/bess-certifications-explained.html"/>
+    <loc>https://novabess-site.vercel.app/resources/bess-certifications-explained.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://novabess-site.vercel.app/resources/bess-certifications-explained.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://novabess-site.vercel.app/resources/bess-certifications-explained.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://novabess.com/resources/novabess-vs-top-brands.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://novabess.com/resources/novabess-vs-top-brands.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://novabess.com/resources/novabess-vs-top-brands.html"/>
+    <loc>https://novabess-site.vercel.app/resources/novabess-vs-top-brands.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://novabess-site.vercel.app/resources/novabess-vs-top-brands.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://novabess-site.vercel.app/resources/novabess-vs-top-brands.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
