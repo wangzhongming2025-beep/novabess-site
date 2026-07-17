@@ -1,0 +1,22 @@
+# NovaBESS
+> Your ready-to-use energy storage partner. NovaBESS supplies plug-and-play residential and industrial battery energy storage systems (BESS), backed by a 40-year manufacturer with IEC 62619, CE, UN38.3 and selected UL certifications.
+
+## Products
+- [HomeStack — Stackable ESS](https://novabess.com/products.html#homestack): Modular 5 / 10 / 15 kWh residential storage. Stack modules to scale capacity. 8000+ cycles @80% DoD, cloud monitoring, plug-and-play install.
+- [HomeWall — Wall-Mounted](https://novabess.com/products.html#homewall): 2.4 / 4.8 / 9.6 kWh space-saving wall unit for apartments, small homes and retrofit. Pairs with rooftop solar for self-consumption.
+- [PowerBox — Industrial Mobile](https://novabess.com/products.html#powerbox): 4 / 8 / 16 kWh wheeled portable power for construction sites, mines, telecom towers and emergency backup. No grid tie-in needed.
+
+## Why NovaBESS
+- Plug-and-play: no local installer required for residential and mobile units — receive it, connect it, use it.
+- 40-year manufacturer: 7 production bases, 1500+ employees, 200+ patents and certifications, full in-house cell-to-system chain.
+- Global certifications: IEC 62619, CE, UN38.3, UL (selected models), ISO 9001. Ready for EU, AU, Middle East and Africa.
+- Cloud monitoring: app-based remote diagnostics and 7x24 status.
+
+## Contact
+- Email: hello@novabess.com
+- Request a tailored quote: https://novabess.com/contact.html
+
+## Resources (coming soon)
+- Home Battery Storage Buying Guide 2026
+- Portable Power for Off-Grid & Construction Sites
+- BESS Certifications Explained: CE / IEC / UN38.3 / UL
