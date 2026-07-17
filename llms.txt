@@ -1,19 +1,24 @@
 # NovaBESS
-> Your ready-to-use energy storage partner. NovaBESS supplies plug-and-play residential and industrial battery energy storage systems (BESS), backed by a 40-year manufacturer with IEC 62619, CE, UN38.3 and selected UL certifications.
+> Your ready-to-use energy storage partner. NovaBESS supplies plug-and-play residential and industrial battery energy storage systems (BESS), backed by a 40-year manufacturer with CE, UN38.3, UL and IEC certifications.
 
 ## About / Factory
 - [About NovaBESS](https://novabess.com/about.html): Export brand backed by a 40-year battery manufacturer. 7 production bases, 600+ acres, 3,000+ employees. ISO 9001, ISO 14001, IATF 16949. Factory tours and certificates available to qualified buyers.
 
 ## Products
-- [HomeStack — Stackable ESS](https://novabess.com/products.html#homestack): Modular 5 / 10 / 15 kWh residential storage. Stack modules to scale capacity. 8000+ cycles @80% DoD, cloud monitoring, plug-and-play install.
-- [HomeWall — Wall-Mounted](https://novabess.com/products.html#homewall): 2.4 / 4.8 / 9.6 kWh space-saving wall unit for apartments, small homes and retrofit. Pairs with rooftop solar for self-consumption.
-- [PowerBox — Industrial Mobile](https://novabess.com/products.html#powerbox): 4 / 8 / 16 kWh wheeled portable power for construction sites, mines, telecom towers and emergency backup. No grid tie-in needed.
+- [HomeStack — Stackable ESS](https://novabess.com/products.html#homestack): 5 / 10 / 15 kWh modular residential battery. 51.2 V nominal, 43.2–58.4 V operating range, 100 A max continuous current, CAN/RS485, IP54, -25°C to +50°C. Parallel up to 12 stacks / 60 kWh. UN38.3 certified.
+- [HomeWall — Wall-Mounted Battery](https://novabess.com/products.html#homewall): 48 V wall-mounted lithium battery in 2.5 / 5.1 / 10.2 kWh (50 / 100 / 200 Ah). 5000 cycles at 80% DoD, 15-year design life, IP54, LCD display, parallel up to 15 units. CE, UN38.3, UL, IEC certified.
+- [PowerBox — Industrial Mobile Power](https://novabess.com/products.html#powerbox): 4.02 / 8.04 / 16.08 kWh wheeled portable power station. 12.8 / 25.6 / 51.2 V, 500 / 1000 / 1500 W, 314 Ah LFP cells, 80%–100% DOD, air-cooled, ≤75 dB(A). CE, UN38.3, UL, IEC certified.
+- [C&I and Container BESS](https://novabess.com/products.html#commercial): Air-cooled cabinet (672–864 VDC, 400 VAC), liquid-cooled cabinet (200–1000 kWh per cabinet, 728–949 VDC, ≥95% round-trip efficiency, LFP 314 Ah), and ISO 40 ft container systems for grid, commercial & industrial, renewable and microgrid projects.
+
+## Product Catalog
+- [Full catalog online](https://novabess.com/catalog.html): 22-page manufacturer catalog with product photos, specifications, applications, factory overview and certifications.
+- [Download PDF catalog](https://novabess.com/NovaBESS-Catalog-2026.pdf)
 
 ## Why NovaBESS
 - Plug-and-play: no local installer required for residential and mobile units — receive it, connect it, use it.
 - 40-year manufacturer: 7 production bases, 3,000+ employees, full in-house cell-to-system chain and certifications.
-- Global certifications: IEC 62619, CE, UN38.3, UL (selected models), ISO 9001. Ready for EU, AU, Middle East and Africa.
-- Cloud monitoring: app-based remote diagnostics and 7x24 status.
+- Global certifications: CE, UN38.3, UL, IEC, ISO 9001, ISO 14001, IATF 16949. Ready for EU, AU, Middle East and Africa.
+- Cloud monitoring: app-based remote diagnostics and 7×24 status.
 
 ## Blog
 - [Home Battery Storage Buying Guide 2026](https://novabess.com/blog/home-battery-buying-guide-2026.html): How to size a home battery by daily kWh and match it to backup, solar self-consumption or off-grid goals.

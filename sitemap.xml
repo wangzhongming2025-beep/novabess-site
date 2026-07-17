@@ -23,6 +23,13 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://novabess.com/catalog.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://novabess.com/catalog.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://novabess.com/catalog.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://novabess.com/contact.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://novabess.com/contact.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://novabess.com/contact.html"/>
