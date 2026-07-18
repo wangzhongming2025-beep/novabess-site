@@ -23,6 +23,10 @@
 ## Tools
 - [Home Battery Calculator](https://novabess-site.vercel.app/calculator.html): Free interactive tool to size your home battery (kWh), pick a model and estimate payback in 30 seconds. No email required to use.
 
+## Services & Cases
+- [OEM / ODM Services](https://novabess-site.vercel.app/oem-odm.html): White-label and custom battery energy storage manufacturing, backed by a 40-year group. 7-step cooperation process, for distributors, installers, brand owners and project developers.
+- [Application Case Studies](https://novabess-site.vercel.app/case-studies.html): Representative deployment scenarios — off-grid home backup, solar self-consumption, remote/telecom sites, and space-limited apartments.
+
 ## Blog
 - [Home Battery Storage Buying Guide 2026](https://novabess-site.vercel.app/blog/home-battery-buying-guide-2026.html): How to size a home battery by daily kWh and match it to backup, solar self-consumption or off-grid goals.
 - [Portable Power for Off-Grid & Construction Sites](https://novabess-site.vercel.app/blog/portable-power-offgrid-construction.html): Wheeled battery power vs diesel, specs and use cases for PowerBox.
