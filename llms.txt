@@ -20,6 +20,9 @@
 - Global certifications: CE, UN38.3, UL, IEC, ISO 9001, ISO 14001, IATF 16949. Ready for EU, AU, Middle East and Africa.
 - Cloud monitoring: app-based remote diagnostics and 7×24 status.
 
+## Tools
+- [Home Battery Calculator](https://novabess-site.vercel.app/calculator.html): Free interactive tool to size your home battery (kWh), pick a model and estimate payback in 30 seconds. No email required to use.
+
 ## Blog
 - [Home Battery Storage Buying Guide 2026](https://novabess-site.vercel.app/blog/home-battery-buying-guide-2026.html): How to size a home battery by daily kWh and match it to backup, solar self-consumption or off-grid goals.
 - [Portable Power for Off-Grid & Construction Sites](https://novabess-site.vercel.app/blog/portable-power-offgrid-construction.html): Wheeled battery power vs diesel, specs and use cases for PowerBox.

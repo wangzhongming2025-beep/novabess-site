@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Battery Calculator — Size &amp; Payback | NovaBESS</title>
+  <meta name="description" content="Free home battery size &amp; payback calculator. Find the right kWh, model and ROI in 30 seconds. Get a tailored quote — no obligation." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="canonical" href="https://novabess-site.vercel.app/calculator.html" />
+  <link rel="alternate" hreflang="en" href="https://novabess-site.vercel.app/calculator.html" />
+  <link rel="alternate" hreflang="x-default" href="https://novabess-site.vercel.app/calculator.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Home Battery Calculator — Size &amp; Payback | NovaBESS" />
+  <meta property="og:description" content="Free tool: find your home battery size, model and payback in 30 seconds." />
+  <meta property="og:url" content="https://novabess-site.vercel.app/calculator.html" />
+  <meta property="og:image" content="https://novabess-site.vercel.app/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Home Battery Calculator — Size &amp; Payback | NovaBESS" />
+  <meta name="twitter:description" content="Free tool: find your home battery size, model and payback in 30 seconds." />
+  <meta name="twitter:image" content="https://novabess-site.vercel.app/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Home Battery Calculator — Size & Payback",
+    "description": "Free interactive calculator to size a home battery (kWh), pick a model and estimate payback.",
+    "author": { "@type": "Organization", "name": "NovaBESS", "url": "https://novabess-site.vercel.app/" },
+    "datePublished": "2026-07-18",
+    "dateModified": "2026-07-18"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What size home battery do I need?",
+        "acceptedAnswer": { "@type": "Answer", "text": "For grid-tied self-consumption, size to about 60% of your daily use. Off-grid, size to 1.5x your net daily use after solar. Our calculator maps the result to a concrete NovaBESS model." } },
+      { "@type": "Question", "name": "How long does a home battery take to pay back?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Typically 6 to 12 years depending on peak/off-peak spread and cycles per day. Higher rate gaps and daily arbitrage shorten payback." } },
+      { "@type": "Question", "name": "Do I need solar to use a home battery?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. A battery also earns from peak/off-peak arbitrage and provides backup. Solar multiplies savings but is not required." } },
+      { "@type": "Question", "name": "Can I expand capacity later?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. NovaBESS HomeStack modules parallel from 5 kWh up to 60 kWh, so you can start small and add later." } }
+    ]
+  }
+  </script>
+  <style>
+    .calc-wrap { max-width: 1040px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+    .calc-form, .calc-result { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 28px; }
+    .calc-result { background: var(--bg-soft); }
+    .field { margin-bottom: 18px; }
+    .field label { display: block; font-size: 14px; font-weight: 600; color: var(--navy-1); margin-bottom: 7px; }
+    .field .hint { font-weight: 400; color: var(--muted); font-size: 12px; }
+    .field input[type=number] { width: 100%; padding: 12px 14px; border: 1px solid var(--line); border-radius: 9px; font-size: 16px; font-family: inherit; }
+    .field input:focus { outline: none; border-color: var(--gold); }
+    .calc-result h3 { color: var(--navy-1); font-size: 17px; margin-bottom: 14px; }
+    .res-row { display: flex; justify-content: space-between; padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+    .res-row:last-of-type { border-bottom: none; }
+    .res-row span { color: var(--muted); }
+    .res-row strong { color: var(--navy-1); font-size: 17px; }
+    .res-hero { background: var(--navy-1); color: #fff; border-radius: 12px; padding: 18px 20px; margin-bottom: 16px; text-align: center; }
+    .res-hero .big { font-size: 34px; font-weight: 800; color: var(--gold-soft); }
+    .res-hero .sub { font-size: 13px; color: #cdd8ec; margin-top: 4px; }
+    .res-model { background: #fff; border: 1px solid var(--gold); border-radius: 12px; padding: 14px 16px; margin-bottom: 16px; font-size: 15px; color: var(--navy-2); }
+    .lead-box { margin-top: 18px; border-top: 1px dashed var(--line); padding-top: 18px; }
+    .lead-box p { font-size: 14px; color: var(--muted); margin-bottom: 12px; }
+    .mini-form { display: none; flex-direction: column; gap: 10px; margin-top: 8px; }
+    .mini-form.show { display: flex; }
+    .mini-form input { padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; font-size: 14px; font-family: inherit; }
+    .mini-ok { display: none; background: #eaf3de; color: #27500a; border-radius: 10px; padding: 14px; font-size: 14px; text-align: center; }
+    .mini-ok.show { display: block; }
+    .disclaimer-sm { font-size: 12px; color: var(--muted); margin-top: 14px; }
+    .mode-toggle { display: flex; gap: 8px; margin-bottom: 18px; }
+    .mode-toggle button { flex: 1; padding: 10px; border: 1px solid var(--line); background: #fff; border-radius: 9px; font-size: 14px; font-weight: 600; color: var(--muted); cursor: pointer; }
+    .mode-toggle button.active { border-color: var(--gold); color: var(--navy-1); background: var(--bg-soft); }
+    @media (max-width: 880px) { .calc-wrap { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <!-- ===== NAV ===== -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">Nova<span>BESS</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="calculator.html" class="active">Calculator</a>
+        <a href="blog/index.html">Blog</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="contact.html" class="btn btn-gold nav-cta">Get a Free Quote</a>
+    </div>
+  </header>
+
+  <!-- ===== PAGE HEAD ===== -->
+  <section class="page-head">
+    <div class="container">
+      <h1>Home Battery Calculator</h1>
+      <p>Find your right size, model and payback in 30 seconds. <b>No email required to use it.</b> Leave it only if you want a tailored quote.</p>
+    </div>
+  </section>
+
+  <!-- ===== CALCULATOR ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="calc-wrap">
+        <!-- INPUT -->
+        <div class="calc-form">
+          <div class="mode-toggle">
+            <button type="button" id="m-grid" class="active" onclick="setMode('grid')">Grid-tied</button>
+            <button type="button" id="m-off" onclick="setMode('off')">Off-grid</button>
+          </div>
+
+          <div class="field">
+            <label>Monthly electricity use <span class="hint">(kWh/month)</span></label>
+            <input type="number" id="monthly" value="900" min="0" step="10" oninput="calc()" />
+          </div>
+          <div class="field">
+            <label>Solar generation <span class="hint">(kWh/day, optional)</span></label>
+            <input type="number" id="solar" value="0" min="0" step="1" oninput="calc()" />
+          </div>
+          <div class="field">
+            <label>Peak electricity rate <span class="hint">($/kWh)</span></label>
+            <input type="number" id="peak" value="0.35" min="0" step="0.01" oninput="calc()" />
+          </div>
+          <div class="field">
+            <label>Off-peak rate <span class="hint">($/kWh)</span></label>
+            <input type="number" id="off" value="0.12" min="0" step="0.01" oninput="calc()" />
+          </div>
+          <div class="field">
+            <label>System price <span class="hint">($/kWh, estimated)</span></label>
+            <input type="number" id="price" value="450" min="0" step="10" oninput="calc()" />
+          </div>
+          <p class="disclaimer-sm">Estimates use a 0.9 round-trip efficiency and 1 arbitrage cycle/day. Figures are indicative; a tailored quote confirms exact sizing and pricing.</p>
+        </div>
+
+        <!-- RESULT -->
+        <div class="calc-result">
+          <div class="res-hero">
+            <div class="big" id="out-kwh">— kWh</div>
+            <div class="sub" id="out-cover">recommended capacity</div>
+          </div>
+          <div class="res-model" id="out-model">—</div>
+          <div class="res-row"><span>Daily saving</span><strong id="out-day">$0</strong></div>
+          <div class="res-row"><span>Annual saving</span><strong id="out-year">$0</strong></div>
+          <div class="res-row"><span>Est. system cost</span><strong id="out-cost">$0</strong></div>
+          <div class="res-row"><span>Payback period</span><strong id="out-pay">—</strong></div>
+
+          <div class="lead-box">
+            <p>Want this configured for <b>your</b> site, with distributor pricing? Leave your email — we reply within 24h, no obligation.</p>
+            <button type="button" class="btn btn-gold" onclick="openLead()">Get a Tailored Quote — Free</button>
+            <form class="mini-form" id="leadForm" onsubmit="submitLead(event)">
+              <input type="text" name="name" placeholder="Your name *" required />
+              <input type="email" name="email" placeholder="Your email *" required />
+              <input type="text" name="country" placeholder="Country" />
+              <input type="hidden" name="access_key" value="f8b43fa7-56bc-4f21-99fd-bfc6abb05d66" />
+              <input type="hidden" name="subject" value="Calculator lead — NovaBESS" />
+              <input type="hidden" name="message" id="lead-msg" value="" />
+              <button type="submit" class="btn btn-gold">Send my request</button>
+            </form>
+            <div class="mini-ok" id="leadOk">Thanks — we'll send your tailored quote within 24h.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section section-dark">
+    <div class="container">
+      <h2 class="section-title light">Calculator FAQ</h2>
+      <div class="faq-item"><h4>What size home battery do I need?</h4><p>For grid-tied self-consumption, size to about 60% of your daily use. Off-grid, size to 1.5x your net daily use after solar. The calculator above maps the result to a concrete NovaBESS model.</p></div>
+      <div class="faq-item"><h4>How long does a home battery take to pay back?</h4><p>Typically 6–12 years depending on peak/off-peak spread and cycles/day. Higher rate gaps and daily arbitrage shorten payback.</p></div>
+      <div class="faq-item"><h4>Do I need solar to use a home battery?</h4><p>No. A battery also earns from peak/off-peak arbitrage and provides backup. Solar multiplies savings but is not required.</p></div>
+      <div class="faq-item"><h4>Can I expand capacity later?</h4><p>Yes. NovaBESS HomeStack modules parallel from 5 kWh up to 60 kWh, so you can start small and add later.</p></div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta">
+    <div class="container cta-inner">
+      <h2>Not sure about your numbers?</h2>
+      <p>Tell us your country, application and capacity — we'll respond with a configured solution and distributor pricing.</p>
+      <a href="contact.html" class="btn btn-gold">Request a Quote</a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="logo">Nova<span>BESS</span></div>
+        <p class="footer-note">Your ready-to-use energy storage partner.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="calculator.html">Calculator</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="blog/index.html">Blog</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-contact">
+        <p>Email: <a href="mailto:hello@novabess.com">hello@novabess.com</a></p>
+      </div>
+    </div>
+    <div class="footer-bar">© 2026 NovaBESS. Powered by a 40-year manufacturer.</div>
+  </footer>
+
+  <script>
+    let mode = 'grid';
+    function setMode(m) {
+      mode = m;
+      document.getElementById('m-grid').classList.toggle('active', m === 'grid');
+      document.getElementById('m-off').classList.toggle('active', m === 'off');
+      calc();
+    }
+    function calc() {
+      const monthly = parseFloat(document.getElementById('monthly').value) || 0;
+      const solar = parseFloat(document.getElementById('solar').value) || 0;
+      const peak = parseFloat(document.getElementById('peak').value) || 0;
+      const off = parseFloat(document.getElementById('off').value) || 0;
+      const price = parseFloat(document.getElementById('price').value) || 0;
+      const dailyUse = monthly / 30;
+      const netDaily = Math.max(0, dailyUse - solar);
+
+      let recKwh, cover;
+      if (mode === 'off') {
+        recKwh = netDaily * 1.5;
+        cover = 'Covers ~1.5 days off-grid (' + netDaily.toFixed(1) + ' kWh/day net of solar)';
+      } else {
+        recKwh = dailyUse * 0.6;
+        cover = 'Covers ~60% of daily use for self-consumption & peak arbitrage';
+      }
+      recKwh = Math.max(0.1, recKwh);
+
+      let model;
+      if (recKwh < 5) model = 'PowerBox 4.02 kWh (portable) or HomeWall 2.5–5.1 kWh';
+      else if (recKwh < 10) model = 'HomeWall 5.1–10.2 kWh / HomeStack 5–10 kWh';
+      else if (recKwh < 20) model = 'HomeStack 10–15 kWh (parallel to 30)';
+      else if (recKwh < 40) model = 'HomeStack 15–30 kWh (parallel to 60)';
+      else model = 'Multiple HomeStack units (parallel up to 60 kWh+)';
+
+      const dailySave = Math.max(0, (peak - off)) * recKwh * 0.9;
+      const annualSave = dailySave * 365;
+      const cost = recKwh * price;
+      const payback = annualSave > 0 ? cost / annualSave : 0;
+
+      document.getElementById('out-kwh').textContent = recKwh.toFixed(1) + ' kWh';
+      document.getElementById('out-cover').textContent = cover;
+      document.getElementById('out-model').textContent = 'Recommended: ' + model;
+      document.getElementById('out-day').textContent = '$' + dailySave.toFixed(1);
+      document.getElementById('out-year').textContent = '$' + Math.round(annualSave).toLocaleString();
+      document.getElementById('out-cost').textContent = '$' + Math.round(cost).toLocaleString();
+      document.getElementById('out-pay').textContent = payback > 0 ? payback.toFixed(1) + ' yrs' : '—';
+
+      document.getElementById('lead-msg').value =
+        'Calculator result — Recommended: ' + recKwh.toFixed(1) + ' kWh (' + model + '). ' +
+        'Monthly use: ' + monthly + ' kWh. Mode: ' + mode + '. Requesting tailored quote.';
+    }
+    function openLead() {
+      document.getElementById('leadForm').classList.add('show');
+    }
+    async function submitLead(e) {
+      e.preventDefault();
+      const form = document.getElementById('leadForm');
+      const data = {
+        access_key: form.access_key.value,
+        name: form.name.value,
+        email: form.email.value,
+        country: form.country.value,
+        subject: form.subject.value,
+        message: form.message.value
+      };
+      try {
+        const r = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(data)
+        });
+        if (r.ok) {
+          form.classList.remove('show');
+          document.getElementById('leadOk').classList.add('show');
+        }
+      } catch (err) { /* silent */ }
+    }
+    calc();
+  </script>
+</body>
+</html>
