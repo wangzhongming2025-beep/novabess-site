@@ -134,4 +134,18 @@
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url>
+    <loc>https://novabess-site.vercel.app/oem-odm.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://novabess-site.vercel.app/oem-odm.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://novabess-site.vercel.app/oem-odm.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://novabess-site.vercel.app/case-studies.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://novabess-site.vercel.app/case-studies.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://novabess-site.vercel.app/case-studies.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
