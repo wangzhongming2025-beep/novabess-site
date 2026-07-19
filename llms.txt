@@ -6,7 +6,7 @@
 
 ## Products
 - [HomeStack — Stackable ESS](https://novabess.com/products.html#homestack): 5 / 10 / 15 kWh modular residential battery. 51.2 V nominal, 43.2–58.4 V operating range, 100 A max continuous current, CAN/RS485, IP54, -25°C to +50°C. Parallel up to 12 stacks / 60 kWh. UN38.3 certified.
-- [HomeWall — Wall-Mounted Battery](https://novabess.com/products.html#homewall): 48 V wall-mounted lithium battery in 2.5 / 5.1 / 10.2 kWh (50 / 100 / 200 Ah). 6,000 cycles at 80% DoD, 15-year design life, IP54, LCD display, parallel up to 15 units. CE, UN38.3, UL, IEC certified.
+- [HomeWall — Wall-Mounted Battery](https://novabess.com/products.html#homewall): 48 V wall-mounted lithium battery in 2.5 / 5.1 / 10.2 kWh (50 / 100 / 200 Ah). 5,000 cycles at 80% DoD, 15-year design life, IP54, LCD display, parallel up to 15 units. CE, UN38.3, UL, IEC certified.
 - [PowerBox — Industrial Mobile Power](https://novabess.com/products.html#powerbox): 4.02 / 8.04 / 16.08 kWh wheeled portable power station. 12.8 / 25.6 / 51.2 V, 500 / 1000 / 1500 W, 314 Ah LFP cells, 80%–100% DoD, air-cooled, ≤75 dB(A). CE, UN38.3, UL, IEC certified.
 - [C&I and Container BESS](https://novabess.com/products.html#commercial): Air-cooled cabinet (672–864 VDC, 400 VAC), liquid-cooled cabinet (200–1000 kWh per cabinet, 728–949 VDC, ≥95% round-trip efficiency, LFP 314 Ah), and ISO 40 ft container systems for grid, commercial & industrial, renewable and microgrid projects.
 
@@ -35,6 +35,7 @@
 - [Home Battery Sizing Calculator](https://novabess.com/blog/home-battery-sizing-calculator.html): A 4-step method to size a home battery by daily kWh, overnight load and backup days.
 - [What Can a 10 kWh Battery Run?](https://novabess.com/blog/what-can-a-10kwh-battery-run.html): Realistic appliance load list and runtime for a 10 kWh home battery, including why AC changes the math.
 - [Home Battery Cost & Payback in 2026](https://novabess.com/blog/home-battery-cost-payback-2026.html): Equipment cost, what drives payback, and whether a battery pays off without solar.
+- [LiFePO4 Battery Disadvantages: 5 Real Drawbacks](https://novabess.com/blog/lifepo4-battery-disadvantages.html): Honest look at cost, energy density, cold-weather charging, cold charge speed and system matching — and when LiFePO4 still wins for home and small-business storage.
 
 ## Resources
 - [BESS Certifications Explained](https://novabess.com/resources/bess-certifications-explained.html): What IEC 62619, UN38.3, CE and UL mean, and which markets each unlocks.
