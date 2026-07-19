@@ -37,6 +37,7 @@
 - [Home Battery Cost & Payback in 2026](https://novabess.com/blog/home-battery-cost-payback-2026.html): Equipment cost, what drives payback, and whether a battery pays off without solar.
 - [LiFePO4 Battery Disadvantages: 5 Real Drawbacks](https://novabess.com/blog/lifepo4-battery-disadvantages.html): Honest look at cost, energy density, cold-weather charging, cold charge speed and system matching — and when LiFePO4 still wins for home and small-business storage.
 - [What Size Solar Battery Do I Need to Be Off Grid?](https://novabess.com/blog/off-grid-battery-sizing.html): The 3 numbers (daily kWh, autonomy days, usable DoD), the sizing formula, a worked 25 kWh example, and how to map the result to real NovaBESS LiFePO4 products. Links the free off-grid calculator.
+- [48V 100Ah Server Rack Battery: Compared for 2026](https://novabess.com/blog/48v-100ah-server-rack-battery.html): What a 48V 100Ah rack module is (~5.12 kWh), the 6 specs that separate good from bad, and how NovaBESS HomeStack (51.2V, 5 kWh module, parallel to 60 kWh) fits this class. Buyer's comparison framework.
 
 ## Resources
 - [BESS Certifications Explained](https://novabess.com/resources/bess-certifications-explained.html): What IEC 62619, UN38.3, CE and UL mean, and which markets each unlocks.
