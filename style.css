@@ -28,6 +28,7 @@ a { color: inherit; text-decoration: none; }
 .logo span { color: var(--gold); }
 .nav-links a { color: #cdd8ec; margin: 0 14px; font-size: 15px; }
 .nav-links a:hover { color: #fff; }
+.nav-links a.active { color: var(--gold); border-bottom: 2px solid var(--gold); padding-bottom: 2px; }
 
 /* HERO */
 .hero { background: linear-gradient(135deg, var(--navy-1), var(--navy-3)); color: #fff; padding: 72px 0 64px; }
