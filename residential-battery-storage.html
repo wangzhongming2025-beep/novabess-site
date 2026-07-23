@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Residential Battery Storage Buying Guide (2026) | NovaBESS</title>
+  <meta name="description" content="A 2026 buyer's guide to residential battery storage: how to size kWh, compare LiFePO4 vs NMC vs lead-acid, read the key specs, and estimate cost per kWh for your home." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="canonical" href="https://novabess.com/residential-battery-storage.html" />
+  <link rel="alternate" hreflang="en" href="https://novabess.com/residential-battery-storage.html" />
+  <link rel="alternate" hreflang="x-default" href="https://novabess.com/residential-battery-storage.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Residential Battery Storage Buying Guide (2026) | NovaBESS" />
+  <meta property="og:description" content="How to size kWh, compare chemistries, read the key specs and estimate cost per kWh for home battery storage." />
+  <meta property="og:url" content="https://novabess.com/residential-battery-storage.html" />
+  <meta property="og:image" content="https://novabess.com/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Residential Battery Storage Buying Guide (2026) | NovaBESS" />
+  <meta name="twitter:description" content="How to size kWh, compare chemistries, read the key specs and estimate cost per kWh for home battery storage." />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Residential Battery Storage Buying Guide (2026)",
+    "description": "A practical 2026 buyer's guide to home battery storage: sizing by kWh, comparing LiFePO4 vs NMC vs lead-acid, the specs that matter, inverter compatibility, certifications and cost per kWh.",
+    "author": { "@type": "Organization", "name": "NovaBESS", "url": "https://novabess.com/" },
+    "datePublished": "2026-07-23",
+    "dateModified": "2026-07-23"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How much residential battery storage do I need?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Size by daily usable kWh, not by the inverter's headline number. Add up the loads you want to back up, multiply by the hours of autonomy you need, then divide by depth of discharge. A typical home wanting evening solar self-use lands around 5–15 kWh; full off-grid or whole-house backup pushes to 20–60 kWh. Use our solar battery size calculator to get a number from your PV array and usage." } },
+      { "@type": "Question", "name": "Is LiFePO4 better than NMC for home battery storage?",
+        "acceptedAnswer": { "@type": "Answer", "text": "For a fixed installation in or next to your home, LiFePO4 (LFP) is usually the better choice: it is thermally stable, supports 80–100% depth of discharge, and lasts 4,000–6,000 cycles. NMC packs more energy per kilo (good for EVs) but degrades faster and runs hotter. Lead-acid is cheap up front yet lasts only ~500 cycles and needs maintenance." } },
+      { "@type": "Question", "name": "What specs matter most when comparing home batteries?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Six specs decide real cost and lifespan: usable capacity (kWh), continuous power (kW), depth of discharge, cycle life, warranty/design life, and round-trip efficiency. Compare them on cost per usable kWh and cost per kWh-cycle, not on sticker price — a cheaper battery with half the cycles is often the expensive one." } },
+      { "@type": "Question", "name": "How much does residential battery storage cost per kWh in 2026?",
+        "acceptedAnswer": { "@type": "Answer", "text": "In 2026, LiFePO4 equipment typically runs $400–900 per usable kWh; turnkey installed systems run $800–1,500 per kWh. Lead-acid equipment is $150–300 per kWh but lasts far fewer cycles. The honest comparison is lifetime cost per kWh-cycle: LiFePO4 lands near $0.12 versus ~$0.50 for lead-acid." } },
+      { "@type": "Question", "name": "Do I need a special inverter for residential battery storage?",
+        "acceptedAnswer": { "@type": "Answer", "text": "You need a hybrid or battery-ready inverter (or an all-in-one unit with an integrated inverter). Most modern home batteries, including NovaBESS HomeWall and HomeStack, communicate over CAN/RS485 and pair with standard hybrid inverters. Confirm your inverter brand and market with the supplier before purchase." } }
+    ]
+  }
+  </script>
+  <style>
+    .guide-step { background:#fff; border:1px solid var(--line); border-radius:14px; padding:20px 22px; margin-bottom:16px; }
+    .guide-step h3 { color:var(--navy-1); margin-bottom:8px; }
+    .guide-step p { color:var(--muted); font-size:14px; line-height:1.7; }
+    .chem { display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin:8px 0 4px; }
+    .chem .card { background:#fff; border:1px solid var(--line); border-radius:14px; padding:18px; }
+    .chem .card h3 { color:var(--navy-1); margin-bottom:6px; font-size:16px; }
+    .chem .card .tag { display:inline-block; font-size:11px; padding:2px 8px; border-radius:99px; margin-bottom:8px; }
+    .chem .card .tag.best { background:#27500a; color:#eaf3de; }
+    .chem .card .tag.mid { background:#6b4e00; color:#fdf3da; }
+    .chem .card .tag.lo { background:#6b1414; color:#fde6e6; }
+    .chem .card p { color:var(--muted); font-size:13px; line-height:1.6; }
+    @media (max-width:760px){ .chem { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <!-- ===== NAV ===== -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">Nova<span>BESS</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="calculator.html">Calculator</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="blog/index.html">Blog</a>
+        <a href="oem-odm.html">OEM/ODM</a>
+        <a href="case-studies.html">Cases</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="contact.html" class="btn btn-gold nav-cta">Get a Free Quote</a>
+    </div>
+  </header>
+
+  <!-- ===== PAGE HEAD ===== -->
+  <section class="page-head">
+    <div class="container">
+      <h1>Residential Battery Storage Buying Guide (2026)</h1>
+      <p>Everything a homeowner needs before buying a home battery: how to size it, which chemistry to pick, the specs that decide cost and lifespan, and how to read a price quote without getting fooled by headline numbers. If your priority is a system that keeps the lights on using your own rooftop solar during outages, start with our <a href="solar-battery-backup.html" style="color:#1a3a6b;font-weight:600;">solar battery backup guide</a>.</p>
+    </div>
+  </section>
+
+  <!-- ===== STEP 1 SIZE ===== -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Step 1 — Size by usable kWh, not by price</h2>
+      <div class="guide-step">
+        <h3>Work backwards from your loads</h3>
+        <p>List the circuits you want to cover (fridge, lights, internet, well pump, AC), estimate their daily kWh, then decide how many hours of autonomy you need. A home aiming for evening solar self-use usually lands at 5–15 kWh; whole-house backup or off-grid climbs to 20–60 kWh. Always use <b>usable</b> kWh — LiFePO4 gives 80–100% depth of discharge, while lead-acid effectively halves its nameplate.</p>
+      </div>
+      <div class="guide-step">
+        <h3>Don't over- or under-buy</h3>
+        <p>Too small and you barely shift solar; too large and you pay for capacity you never cycle. Modular systems (like NovaBESS HomeStack, which stacks 5–15 kWh to 60 kWh) let you start lean and add modules as usage grows — the lowest-risk way to size.</p>
+      </div>
+      <div class="guide-step">
+        <h3>Use a calculator, not a guess</h3>
+        <p>Plug your PV array size, peak sun hours and daily usage into our <a href="solar-battery-calculator.html">solar battery size calculator</a> to get a recommended capacity and self-consumption rate in seconds.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STEP 2 CHEMISTRY ===== -->
+  <section class="section section-dark">
+    <div class="container">
+      <h2 class="section-title light">Step 2 — Pick the chemistry</h2>
+      <div class="chem">
+        <div class="card">
+          <span class="tag best">Best for homes</span>
+          <h3>LiFePO4 (LFP)</h3>
+          <p>Thermally stable, 80–100% DoD, 4,000–6,000 cycles, low maintenance. Higher up front but cheapest per kWh delivered. The standard for safe residential storage.</p>
+        </div>
+        <div class="card">
+          <span class="tag mid">Energy-dense</span>
+          <h3>NMC</h3>
+          <p>Used in the Tesla Powerwall. More energy per kilo, but degrades faster, runs hotter, and is warrantied by years rather than cycles. Fine, but usually pricier per delivered kWh.</p>
+        </div>
+        <div class="card">
+          <span class="tag lo">Cheap, short-lived</span>
+          <h3>Lead-acid</h3>
+          <p>Lowest sticker price ($150–300/kWh) but only ~500 cycles, 50% DoD, needs watering/venting. Over a system life it costs roughly 4x more per kWh-cycle than LFP.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STEP 3 SPECS ===== -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Step 3 — Read the six specs that matter</h2>
+      <div class="guide-step">
+        <h3>1. Usable capacity (kWh)</h3>
+        <p>The energy you can actually draw. Compare this, not nameplate, across brands.</p>
+      </div>
+      <div class="guide-step">
+        <h3>2. Continuous power (kW)</h3>
+        <p>How many loads can run at once. A 5 kWh battery at 100 A delivers ~5 kW — enough for essentials, not a whole-house heat pump. Match it to your peak load.</p>
+      </div>
+      <div class="guide-step">
+        <h3>3. Depth of discharge (DoD)</h3>
+        <p>How much of the battery you can use. LFP 80–100% vs lead-acid ~50%. DoD directly scales usable kWh.</p>
+      </div>
+      <div class="guide-step">
+        <h3>4. Cycle life</h3>
+        <p>Full charge–discharge cycles before notable degradation. 5,000 cycles (LFP) vs ~500 (lead-acid) is the single biggest cost driver.</p>
+      </div>
+      <div class="guide-step">
+        <h3>5. Warranty / design life</h3>
+        <p>Years plus retained-capacity clause. NovaBESS residential lines carry a 15-year design life; some brands warranty 10 years at 70% retention.</p>
+      </div>
+      <div class="guide-step">
+        <h3>6. Round-trip efficiency</h3>
+        <p>Share of stored energy you get back. LFP ~95–98% vs lead-acid losing 15–20% to heat and gassing — you silently buy extra solar to cover the loss.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STEP 4 COST ===== -->
+  <section class="section section-dark">
+    <div class="container">
+      <h2 class="section-title light">Step 4 — Compare on cost per kWh, not sticker price</h2>
+      <p style="color:#cdd8ec;max-width:780px;">Divide total price by usable kWh to get <b>$/kWh</b>, then divide that by cycle life to get <b>$/kWh-cycle</b> — the number that actually predicts your payback. In 2026, LiFePO4 equipment runs about $400–900 per usable kWh and ~$0.12 per kWh-cycle; lead-acid looks cheap at $150–300/kWh but lands near $0.50 per kWh-cycle. Run your own numbers in the <a href="solar-battery-cost-calculator.html" style="color:var(--gold-soft);">cost-per-kWh calculator</a>.</p>
+    </div>
+  </section>
+
+  <!-- ===== STEP 5 COMPAT ===== -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Step 5 — Check inverter &amp; certifications</h2>
+      <div class="guide-step">
+        <h3>Inverter compatibility</h3>
+        <p>You need a hybrid or battery-ready inverter (or an all-in-one unit). NovaBESS HomeWall and HomeStack talk CAN/RS485 and pair with standard hybrid inverters — confirm your brand and market with the supplier.</p>
+      </div>
+      <div class="guide-step">
+        <h3>Certifications</h3>
+        <p>For a safe, insurable install look for CE, UN38.3, UL and IEC 62619. HomeWall carries CE/UN38.3/UL/IEC; HomeStack carries UN38.3. Match the certs required in your country.</p>
+      </div>
+      <div class="guide-step">
+        <h3>Installation &amp; monitoring</h3>
+        <p>Wall-mounted units (HomeWall) are easiest to retrofit; stackable units (HomeStack) suit new builds and villas. Pick a system with LCD or app monitoring so you can see self-consumption and savings.</p>
+      </div>
+      <p style="margin-top:8px;">Ready to compare real products? See the <a href="products.html">NovaBESS residential line-up</a> or the <a href="tesla-powerwall-alternative.html">Powerwall alternative comparison</a>.</p>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section section-dark">
+    <div class="container">
+      <h2 class="section-title light">Residential storage FAQ</h2>
+      <div class="faq-item"><h4>How much residential battery storage do I need?</h4><p>Size by daily usable kWh, not by the inverter's headline number. Add up the loads you want to back up, multiply by the hours of autonomy you need, then divide by depth of discharge. A typical home wanting evening solar self-use lands around 5–15 kWh; full off-grid or whole-house backup pushes to 20–60 kWh. Use our solar battery size calculator to get a number from your PV array and usage.</p></div>
+      <div class="faq-item"><h4>Is LiFePO4 better than NMC for home battery storage?</h4><p>For a fixed installation in or next to your home, LiFePO4 (LFP) is usually the better choice: it is thermally stable, supports 80–100% depth of discharge, and lasts 4,000–6,000 cycles. NMC packs more energy per kilo (good for EVs) but degrades faster and runs hotter. Lead-acid is cheap up front yet lasts only ~500 cycles and needs maintenance.</p></div>
+      <div class="faq-item"><h4>What specs matter most when comparing home batteries?</h4><p>Six specs decide real cost and lifespan: usable capacity (kWh), continuous power (kW), depth of discharge, cycle life, warranty/design life, and round-trip efficiency. Compare them on cost per usable kWh and cost per kWh-cycle, not on sticker price — a cheaper battery with half the cycles is often the expensive one.</p></div>
+      <div class="faq-item"><h4>How much does residential battery storage cost per kWh in 2026?</h4><p>In 2026, LiFePO4 equipment typically runs $400–900 per usable kWh; turnkey installed systems run $800–1,500 per kWh. Lead-acid equipment is $150–300 per kWh but lasts far fewer cycles. The honest comparison is lifetime cost per kWh-cycle: LiFePO4 lands near $0.12 versus ~$0.50 for lead-acid.</p></div>
+      <div class="faq-item"><h4>Do I need a special inverter for residential battery storage?</h4><p>You need a hybrid or battery-ready inverter (or an all-in-one unit with an integrated inverter). Most modern home batteries, including NovaBESS HomeWall and HomeStack, communicate over CAN/RS485 and pair with standard hybrid inverters. Confirm your inverter brand and market with the supplier before purchase.</p></div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta">
+    <div class="container cta-inner">
+      <h2>Need help sizing your home battery?</h2>
+      <p>Tell us your country, inverter and daily usage — we'll recommend a HomeWall or HomeStack configuration and quote pricing.</p>
+      <a href="contact.html" class="btn btn-gold">Request a Quote</a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="logo">Nova<span>BESS</span></div>
+        <p class="footer-note">Your ready-to-use energy storage partner.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="calculator.html">Calculator</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="blog/index.html">Blog</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-contact">
+        <p>Email: <a href="mailto:hello@novabess.com">hello@novabess.com</a></p>
+      </div>
+    </div>
+    <div class="footer-bar">© 2026 NovaBESS. Powered by a 40-year manufacturer.</div>
+  </footer>
+</body>
+</html>

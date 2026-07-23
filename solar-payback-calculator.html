@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solar Payback Calculator (2026) | NovaBESS</title>
+  <meta name="description" content="Free solar payback calculator. Enter system cost, incentive, monthly bill and annual escalation — see your payback period in years and 10/25-year lifetime savings. No email required." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="canonical" href="https://novabess.com/solar-payback-calculator.html" />
+  <link rel="alternate" hreflang="en" href="https://novabess.com/solar-payback-calculator.html" />
+  <link rel="alternate" hreflang="x-default" href="https://novabess.com/solar-payback-calculator.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Solar Payback Calculator (2026) | NovaBESS" />
+  <meta property="og:description" content="See your solar payback period and 10/25-year lifetime savings in seconds." />
+  <meta property="og:url" content="https://novabess.com/solar-payback-calculator.html" />
+  <meta property="og:image" content="https://novabess.com/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Solar Payback Calculator (2026) | NovaBESS" />
+  <meta name="twitter:description" content="See your solar payback period and 10/25-year lifetime savings in seconds." />
+  <meta name="twitter:image" content="https://novabess.com/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Solar Payback Calculator (2026)",
+    "description": "Interactive calculator that converts a solar (and battery) system's gross cost, incentive, monthly bill and annual tariff escalation into a payback period and 10/25-year lifetime savings.",
+    "author": { "@type": "Organization", "name": "NovaBESS", "url": "https://novabess.com/" },
+    "datePublished": "2026-07-23",
+    "dateModified": "2026-07-23"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What is the average solar payback period in 2026?",
+        "acceptedAnswer": { "@type": "Answer", "text": "In 2026 a typical grid-tied solar system pays back in about 6–10 years, dropping to 4–7 years where a battery raises self-consumption and incentives such as a 30% tax credit apply. Backup-only or very cheap-grid cases run longer." } },
+      { "@type": "Question", "name": "Does adding a battery lengthen or shorten solar payback?",
+        "acceptedAnswer": { "@type": "Answer", "text": "It adds upfront cost, but a battery lets you use more of your own solar instead of exporting it cheaply — so it often shortens payback if you cycle it daily. If used only for rare outages, it lengthens pure financial payback while adding resilience value." } },
+      { "@type": "Question", "name": "How do incentives like a 30% tax credit affect payback?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A 30% credit cuts your net cost by nearly a third, which shortens payback by years — roughly dividing the payback period by 0.7. Always enter the net-of-incentive figure for an honest result." } },
+      { "@type": "Question", "name": "Is solar still worth it if electricity is cheap?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Payback takes longer on a cheap grid, but the case shifts to price protection (tariffs usually rise) and resilience. Many buyers still proceed because the 25-year savings compound as rates climb." } }
+    ]
+  }
+  </script>
+  <style>
+    .calc-wrap { max-width: 1040px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+    .calc-form, .calc-result { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 28px; }
+    .calc-result { background: var(--bg-soft); }
+    .field { margin-bottom: 18px; }
+    .field label { display: block; font-size: 14px; font-weight: 600; color: var(--navy-1); margin-bottom: 7px; }
+    .field .hint { font-weight: 400; color: var(--muted); font-size: 12px; }
+    .field input[type=number] { width: 100%; padding: 12px 14px; border: 1px solid var(--line); border-radius: 9px; font-size: 16px; font-family: inherit; }
+    .field input:focus { outline: none; border-color: var(--gold); }
+    .calc-result h3 { color: var(--navy-1); font-size: 17px; margin-bottom: 14px; }
+    .res-hero { background: var(--navy-1); color: #fff; border-radius: 12px; padding: 18px 20px; margin-bottom: 14px; text-align: center; }
+    .res-hero .big { font-size: 36px; font-weight: 800; color: var(--gold-soft); }
+    .res-hero .sub { font-size: 13px; color: #cdd8ec; margin-top: 4px; }
+    .verdict { font-size: 14px; line-height: 1.5; padding: 12px 14px; border-radius: 10px; margin-bottom: 18px; }
+    .verdict.good { background: #eaf3de; color: #27500a; border: 1px solid #b9d89a; }
+    .verdict.warn { background: #fdf3da; color: #6b4e00; border: 1px solid #e7cf8a; }
+    .verdict.bad  { background: #fde6e6; color: #6b1414; border: 1px solid #e7a8a8; }
+    .cmp { width: 100%; border-collapse: collapse; margin-bottom: 18px; font-size: 14px; }
+    .cmp caption { text-align: left; font-size: 13px; font-weight: 700; color: var(--navy-1); margin-bottom: 8px; }
+    .cmp th, .cmp td { padding: 10px 12px; border-bottom: 1px solid var(--line); text-align: left; }
+    .cmp th { font-size: 12px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .03em; }
+    .cmp td.num { text-align: right; font-variant-numeric: tabular-nums; color: var(--navy-1); font-weight: 600; }
+    .cmp tr.you td { background: #fff7e6; }
+    .cmp tr.you td:first-child { border-left: 3px solid var(--gold); }
+    .lead-box { margin-top: 6px; border-top: 1px dashed var(--line); padding-top: 18px; }
+    .lead-box p { font-size: 14px; color: var(--muted); margin-bottom: 12px; }
+    .mini-form { display: none; flex-direction: column; gap: 10px; margin-top: 8px; }
+    .mini-form.show { display: flex; }
+    .mini-form input { padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; font-size: 14px; font-family: inherit; }
+    .mini-ok { display: none; background: #eaf3de; color: #27500a; border-radius: 10px; padding: 14px; font-size: 14px; text-align: center; }
+    .mini-ok.show { display: block; }
+    .disclaimer-sm { font-size: 12px; color: var(--muted); margin-top: 14px; line-height: 1.5; }
+    @media (max-width: 880px) { .calc-wrap { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <!-- ===== NAV ===== -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">Nova<span>BESS</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="calculator.html" class="active">Calculator</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="blog/index.html">Blog</a>
+        <a href="oem-odm.html">OEM/ODM</a>
+        <a href="case-studies.html">Cases</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="contact.html" class="btn btn-gold nav-cta">Get a Free Quote</a>
+    </div>
+  </header>
+
+  <!-- ===== PAGE HEAD ===== -->
+  <section class="page-head">
+    <div class="container">
+      <h1>Solar Payback Calculator</h1>
+      <p>Enter your <b>system cost</b>, <b>incentive</b>, <b>monthly bill</b> and <b>annual escalation</b> — see your <b>payback period</b> and <b>10/25-year lifetime savings</b>. <b>No email required to use it.</b></p>
+    </div>
+  </section>
+
+  <!-- ===== CALCULATOR ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="calc-wrap">
+        <!-- INPUT -->
+        <div class="calc-form">
+          <div class="field">
+            <label>Gross system cost <span class="hint">($ USD, before incentive)</span></label>
+            <input type="number" id="gross" value="18000" min="0" step="500" oninput="calc()" />
+          </div>
+          <div class="field">
+            <label>Incentive / tax credit <span class="hint">(% of gross)</span></label>
+            <input type="number" id="incentive" value="30" min="0" max="100" step="1" oninput="calc()" />
+          </div>
+          <div class="field">
+            <label>Current monthly electricity bill <span class="hint">($ USD)</span></label>
+            <input type="number" id="bill" value="150" min="0" step="5" oninput="calc()" />
+          </div>
+          <div class="field">
+            <label>Annual bill escalation <span class="hint">(%/year, default 3%)</span></label>
+            <input type="number" id="esc" value="3" min="0" step="0.5" oninput="calc()" />
+          </div>
+          <p class="disclaimer-sm">Net cost = gross x (1 − incentive%). Annual saving = 12 x monthly bill, escalated yearly. Figures are indicative; incentives and tariffs vary by country and year.</p>
+        </div>
+
+        <!-- RESULT -->
+        <div class="calc-result">
+          <div class="res-hero">
+            <div class="big" id="out-pay">— yrs</div>
+            <div class="sub" id="out-sub">payback period</div>
+          </div>
+          <div class="verdict good" id="verdict">—</div>
+
+          <table class="cmp">
+            <caption>Your solar economics</caption>
+            <thead><tr><th>Metric</th><th style="text-align:right">Value</th></tr></thead>
+            <tbody>
+              <tr class="you"><td>Net cost after incentive</td><td class="num" id="r-net">—</td></tr>
+              <tr><td>Year-1 saving</td><td class="num" id="r-y1">—</td></tr>
+              <tr><td>10-year net saving</td><td class="num" id="r-10">—</td></tr>
+              <tr><td>25-year net saving</td><td class="num" id="r-25">—</td></tr>
+              <tr><td>Cost if you never go solar (25y)</td><td class="num" id="r-nosolar">—</td></tr>
+            </tbody>
+          </table>
+
+          <div class="lead-box">
+            <p>Want a payback estimate for <b>your</b> tariff and incentive? Leave your email — we reply within 24h, no obligation.</p>
+            <button type="button" class="btn btn-gold" onclick="openLead()">Get a Tailored Quote — Free</button>
+            <form class="mini-form" id="leadForm" onsubmit="submitLead(event)">
+              <input type="text" name="name" placeholder="Your name *" required />
+              <input type="email" name="email" placeholder="Your email *" required />
+              <input type="text" name="country" placeholder="Country" />
+              <input type="hidden" name="access_key" value="7318fa87-c77b-4735-8370-19302d67c0a9" />
+              <input type="hidden" name="subject" value="Solar payback calculator lead — NovaBESS" />
+              <input type="hidden" name="message" id="lead-msg" value="" />
+              <button type="submit" class="btn btn-gold">Send my request</button>
+            </form>
+            <div class="mini-ok" id="leadOk">Thanks — we'll send your tailored quote within 24h.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section section-dark">
+    <div class="container">
+      <h2 class="section-title light">Payback FAQ</h2>
+      <div class="faq-item"><h4>What is the average solar payback period in 2026?</h4><p>In 2026 a typical grid-tied solar system pays back in about 6–10 years, dropping to 4–7 years where a battery raises self-consumption and incentives such as a 30% tax credit apply. Backup-only or very cheap-grid cases run longer.</p></div>
+      <div class="faq-item"><h4>Does adding a battery lengthen or shorten solar payback?</h4><p>It adds upfront cost, but a battery lets you use more of your own solar instead of exporting it cheaply — so it often shortens payback if you cycle it daily. If used only for rare outages, it lengthens pure financial payback while adding resilience value.</p></div>
+      <div class="faq-item"><h4>How do incentives like a 30% tax credit affect payback?</h4><p>A 30% credit cuts your net cost by nearly a third, which shortens payback by years — roughly dividing the payback period by 0.7. Always enter the net-of-incentive figure for an honest result.</p></div>
+      <div class="faq-item"><h4>Is solar still worth it if electricity is cheap?</h4><p>Payback takes longer on a cheap grid, but the case shifts to price protection (tariffs usually rise) and resilience. Many buyers still proceed because the 25-year savings compound as rates climb.</p></div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta">
+    <div class="container cta-inner">
+      <h2>Want a payback estimate for your home?</h2>
+      <p>Tell us your country, tariff type and daily kWh — we'll size a system and outline the case.</p>
+      <a href="contact.html" class="btn btn-gold">Request a Quote</a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="logo">Nova<span>BESS</span></div>
+        <p class="footer-note">Your ready-to-use energy storage partner.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="calculator.html">Calculator</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="blog/index.html">Blog</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-contact">
+        <p>Email: <a href="mailto:hello@novabess.com">hello@novabess.com</a></p>
+      </div>
+    </div>
+    <div class="footer-bar">© 2026 NovaBESS. Powered by a 40-year manufacturer.</div>
+  </footer>
+
+  <script>
+    function calc() {
+      const gross = parseFloat(document.getElementById('gross').value) || 0;
+      const inc = parseFloat(document.getElementById('incentive').value) || 0;
+      const bill = parseFloat(document.getElementById('bill').value) || 0;
+      const esc = parseFloat(document.getElementById('esc').value) || 0;
+
+      const net = gross * (1 - inc / 100);
+      const y1 = bill * 12;
+
+      // cumulative saved over N years with escalation
+      function cumulativeSaved(years) {
+        if (esc === 0) return y1 * years;
+        return y1 * ((Math.pow(1 + esc / 100, years) - 1) / (esc / 100));
+      }
+      const saved10 = cumulativeSaved(10);
+      const saved25 = cumulativeSaved(25);
+
+      // payback period (years) — iterative
+      let pay = 0;
+      if (y1 > 0) {
+        let cum = 0, t = 0;
+        while (t < 60 && cum < net) {
+          t += 0.25;
+          const yearBill = y1 * Math.pow(1 + esc / 100, t - 0.25); // bill saved in this quarter
+          cum += yearBill * 0.25;
+        }
+        pay = t;
+      } else {
+        pay = 0;
+      }
+
+      const net10 = saved10 - net;
+      const net25 = saved25 - net;
+      const noSolar25 = saved25; // what you'd pay the utility over 25y at escalated rates
+
+      // verdict
+      const v = document.getElementById('verdict');
+      let band, txt;
+      if (pay <= 0) { band = 'warn'; txt = 'Enter a monthly bill greater than 0 to estimate payback.'; }
+      else if (pay <= 5) { band = 'good'; txt = 'Excellent payback — under 5 years. Strong case to proceed.'; }
+      else if (pay <= 8) { band = 'good'; txt = 'Healthy payback (5–8 years). Typical for well-matched solar + battery systems.'; }
+      else if (pay <= 12) { band = 'warn'; txt = 'Acceptable payback (8–12 years). Value leans on resilience and long-term rate protection.'; }
+      else { band = 'bad'; txt = 'Long payback (12+ years). Re-check sizing, incentive, or consider a smaller system.'; }
+      v.className = 'verdict ' + band;
+      v.textContent = txt;
+
+      document.getElementById('out-pay').textContent = pay > 0 ? pay.toFixed(1) + ' yrs' : '—';
+      document.getElementById('out-sub').textContent = 'payback period';
+      document.getElementById('r-net').textContent = '$' + Math.round(net).toLocaleString();
+      document.getElementById('r-y1').textContent = '$' + Math.round(y1).toLocaleString();
+      document.getElementById('r-10').textContent = (net10 >= 0 ? '+$' : '−$') + Math.abs(Math.round(net10)).toLocaleString();
+      document.getElementById('r-25').textContent = (net25 >= 0 ? '+$' : '−$') + Math.abs(Math.round(net25)).toLocaleString();
+      document.getElementById('r-nosolar').textContent = '$' + Math.round(noSolar25).toLocaleString();
+
+      document.getElementById('lead-msg').value =
+        'Solar payback calculator result — Net cost: $' + Math.round(net).toLocaleString() +
+        ', payback: ' + (pay > 0 ? pay.toFixed(1) + ' yrs' : 'n/a') +
+        ', 25y net saving: $' + Math.round(net25).toLocaleString() + '. Requesting tailored quote.';
+    }
+
+    function openLead() {
+      document.getElementById('leadForm').classList.add('show');
+    }
+    async function submitLead(e) {
+      e.preventDefault();
+      const form = document.getElementById('leadForm');
+      const data = {
+        access_key: form.access_key.value,
+        name: form.name.value,
+        email: form.email.value,
+        country: form.country.value,
+        subject: form.subject.value,
+        message: form.message.value
+      };
+      try {
+        const r = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(data)
+        });
+        if (r.ok) {
+          form.classList.remove('show');
+          document.getElementById('leadOk').classList.add('show');
+        }
+      } catch (err) { /* silent */ }
+    }
+    calc();
+  </script>
+</body>
+</html>

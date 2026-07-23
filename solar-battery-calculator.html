@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solar Battery Size Calculator (2026) | NovaBESS</title>
+  <meta name="description" content="Free solar battery size calculator. Enter your PV array size, sun hours and daily use — see the right battery capacity in kWh, self-sufficiency %, and a recommended LiFePO4 model. No email required." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="canonical" href="https://novabess.com/solar-battery-calculator.html" />
+  <link rel="alternate" hreflang="en" href="https://novabess.com/solar-battery-calculator.html" />
+  <link rel="alternate" hreflang="x-default" href="https://novabess.com/solar-battery-calculator.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Solar Battery Size Calculator (2026) | NovaBESS" />
+  <meta property="og:description" content="Size your battery to your solar array — capacity, self-sufficiency % and model in seconds." />
+  <meta property="og:url" content="https://novabess.com/solar-battery-calculator.html" />
+  <meta property="og:image" content="https://novabess.com/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Solar Battery Size Calculator (2026) | NovaBESS" />
+  <meta name="twitter:description" content="Size your battery to your solar array — capacity, self-sufficiency % and model in seconds." />
+  <meta name="twitter:image" content="https://novabess.com/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Solar Battery Size Calculator (2026)",
+    "description": "Interactive calculator that sizes a home or small C&I battery to a solar PV array, showing recommended capacity in kWh, self-sufficiency percentage and a matching LiFePO4 model.",
+    "author": { "@type": "Organization", "name": "NovaBESS", "url": "https://novabess.com/" },
+    "datePublished": "2026-07-23",
+    "dateModified": "2026-07-23"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How many kWh of battery do I need per kW of solar?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A practical rule of thumb is 1–2 kWh of battery per kW of PV for self-consumption. A 5 kW array on a typical home pairs well with a 5–10 kWh battery; the exact size depends on your evening use and how much solar you want to capture instead of exporting." } },
+      { "@type": "Question", "name": "Should I size the battery to my whole solar output?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Storing 100% of midday peak generation is usually wasteful — you would rarely fill it. Size to your evening/overnight load (roughly 40–60% of daily use) so the battery cycles fully every day, which is better for payback and battery life." } },
+      { "@type": "Question", "name": "Is LiFePO4 better than lead-acid for solar storage?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. LiFePO4 supports 80–100% depth of discharge versus ~50% for lead-acid, and lasts 5,000+ cycles versus ~500. That means you need a smaller nameplate to get the same usable kWh, and it is far cheaper per kWh delivered over its life." } },
+      { "@type": "Question", "name": "Can I add more battery to my solar system later?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Modular systems such as NovaBESS HomeStack parallel from 5 kWh up to 60 kWh, so you can start with what your array and budget allow and expand as your use grows." } }
+    ]
+  }
+  </script>
+  <style>
+    .calc-wrap { max-width: 1040px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+    .calc-form, .calc-result { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 28px; }
+    .calc-result { background: var(--bg-soft); }
+    .field { margin-bottom: 18px; }
+    .field label { display: block; font-size: 14px; font-weight: 600; color: var(--navy-1); margin-bottom: 7px; }
+    .field .hint { font-weight: 400; color: var(--muted); font-size: 12px; }
+    .field input[type=number] { width: 100%; padding: 12px 14px; border: 1px solid var(--line); border-radius: 9px; font-size: 16px; font-family: inherit; }
+    .field input:focus { outline: none; border-color: var(--gold); }
+    .calc-result h3 { color: var(--navy-1); font-size: 17px; margin-bottom: 14px; }
+    .res-hero { background: var(--navy-1); color: #fff; border-radius: 12px; padding: 18px 20px; margin-bottom: 14px; text-align: center; }
+    .res-hero .big { font-size: 36px; font-weight: 800; color: var(--gold-soft); }
+    .res-hero .sub { font-size: 13px; color: #cdd8ec; margin-top: 4px; }
+    .verdict { font-size: 14px; line-height: 1.5; padding: 12px 14px; border-radius: 10px; margin-bottom: 18px; }
+    .verdict.good { background: #eaf3de; color: #27500a; border: 1px solid #b9d89a; }
+    .verdict.warn { background: #fdf3da; color: #6b4e00; border: 1px solid #e7cf8a; }
+    .verdict.bad  { background: #fde6e6; color: #6b1414; border: 1px solid #e7a8a8; }
+    .cmp { width: 100%; border-collapse: collapse; margin-bottom: 18px; font-size: 14px; }
+    .cmp caption { text-align: left; font-size: 13px; font-weight: 700; color: var(--navy-1); margin-bottom: 8px; }
+    .cmp th, .cmp td { padding: 10px 12px; border-bottom: 1px solid var(--line); text-align: left; }
+    .cmp th { font-size: 12px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .03em; }
+    .cmp td.num { text-align: right; font-variant-numeric: tabular-nums; color: var(--navy-1); font-weight: 600; }
+    .cmp tr.you td { background: #fff7e6; }
+    .cmp tr.you td:first-child { border-left: 3px solid var(--gold); }
+    .res-model { background: #fff; border: 1px solid var(--gold); border-radius: 12px; padding: 14px 16px; margin-bottom: 16px; font-size: 15px; color: var(--navy-2); }
+    .lead-box { margin-top: 6px; border-top: 1px dashed var(--line); padding-top: 18px; }
+    .lead-box p { font-size: 14px; color: var(--muted); margin-bottom: 12px; }
+    .mini-form { display: none; flex-direction: column; gap: 10px; margin-top: 8px; }
+    .mini-form.show { display: flex; }
+    .mini-form input { padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; font-size: 14px; font-family: inherit; }
+    .mini-ok { display: none; background: #eaf3de; color: #27500a; border-radius: 10px; padding: 14px; font-size: 14px; text-align: center; }
+    .mini-ok.show { display: block; }
+    .disclaimer-sm { font-size: 12px; color: var(--muted); margin-top: 14px; line-height: 1.5; }
+    @media (max-width: 880px) { .calc-wrap { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <!-- ===== NAV ===== -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">Nova<span>BESS</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="calculator.html" class="active">Calculator</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="blog/index.html">Blog</a>
+        <a href="oem-odm.html">OEM/ODM</a>
+        <a href="case-studies.html">Cases</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="contact.html" class="btn btn-gold nav-cta">Get a Free Quote</a>
+    </div>
+  </header>
+
+  <!-- ===== PAGE HEAD ===== -->
+  <section class="page-head">
+    <div class="container">
+      <h1>Solar Battery Size Calculator</h1>
+      <p>Enter your <b>PV array size</b>, <b>sun hours</b> and <b>daily use</b> — see the right battery capacity in kWh, your <b>self-sufficiency %</b>, and a recommended LiFePO4 model. <b>No email required to use it.</b></p>
+    </div>
+  </section>
+
+  <!-- ===== CALCULATOR ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="calc-wrap">
+        <!-- INPUT -->
+        <div class="calc-form">
+          <div class="field">
+            <label>Solar PV array size <span class="hint">(kW DC)</span></label>
+            <input type="number" id="arrayKw" value="5" min="0.1" step="0.5" oninput="calc()" />
+          </div>
+          <div class="field">
+            <label>Average peak sun hours <span class="hint">(hours/day)</span></label>
+            <input type="number" id="sun" value="4.5" min="0.1" step="0.1" oninput="calc()" />
+          </div>
+          <div class="field">
+            <label>Daily household consumption <span class="hint">(kWh/day)</span></label>
+            <input type="number" id="use" value="20" min="0.1" step="0.5" oninput="calc()" />
+          </div>
+          <div class="field">
+            <label>Battery chemistry</label>
+            <select id="chem" onchange="calc()" style="width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:9px;font-size:15px;font-family:inherit;">
+              <option value="0.9">LiFePO4 (90% usable / DoD)</option>
+              <option value="0.5">Lead-acid (50% usable / DoD)</option>
+            </select>
+          </div>
+          <p class="disclaimer-sm">Daily generation = array kW x sun hours, derated ~10% for system losses. Recommended capacity targets your evening/overnight load so the battery cycles daily. Figures are indicative; a tailored quote confirms exact sizing.</p>
+        </div>
+
+        <!-- RESULT -->
+        <div class="calc-result">
+          <div class="res-hero">
+            <div class="big" id="out-kwh">— kWh</div>
+            <div class="sub" id="out-sub">recommended battery capacity</div>
+          </div>
+          <div class="verdict good" id="verdict">—</div>
+
+          <div class="res-model" id="out-model">—</div>
+
+          <table class="cmp">
+            <caption>Your solar &amp; storage at a glance</caption>
+            <thead><tr><th>Metric</th><th style="text-align:right">Value</th></tr></thead>
+            <tbody>
+              <tr class="you"><td>Daily solar generation</td><td class="num" id="r-gen">—</td></tr>
+              <tr><td>Usable solar energy</td><td class="num" id="r-usable">—</td></tr>
+              <tr><td>Self-sufficiency (solar + stored)</td><td class="num" id="r-self">—</td></tr>
+              <tr><td>Excess exported to grid</td><td class="num" id="r-export">—</td></tr>
+            </tbody>
+          </table>
+
+          <div class="lead-box">
+            <p>Want this configured for <b>your</b> roof with distributor or OEM pricing? Leave your email — we reply within 24h, no obligation.</p>
+            <button type="button" class="btn btn-gold" onclick="openLead()">Get a Tailored Quote — Free</button>
+            <form class="mini-form" id="leadForm" onsubmit="submitLead(event)">
+              <input type="text" name="name" placeholder="Your name *" required />
+              <input type="email" name="email" placeholder="Your email *" required />
+              <input type="text" name="country" placeholder="Country" />
+              <input type="hidden" name="access_key" value="7318fa87-c77b-4735-8370-19302d67c0a9" />
+              <input type="hidden" name="subject" value="Solar battery size calculator lead — NovaBESS" />
+              <input type="hidden" name="message" id="lead-msg" value="" />
+              <button type="submit" class="btn btn-gold">Send my request</button>
+            </form>
+            <div class="mini-ok" id="leadOk">Thanks — we'll send your tailored quote within 24h.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section section-dark">
+    <div class="container">
+      <h2 class="section-title light">Sizing FAQ</h2>
+      <div class="faq-item"><h4>How many kWh of battery do I need per kW of solar?</h4><p>A practical rule of thumb is 1–2 kWh of battery per kW of PV for self-consumption. A 5 kW array on a typical home pairs well with a 5–10 kWh battery; the exact size depends on your evening use and how much solar you want to capture instead of exporting.</p></div>
+      <div class="faq-item"><h4>Should I size the battery to my whole solar output?</h4><p>No. Storing 100% of midday peak generation is usually wasteful — you would rarely fill it. Size to your evening/overnight load (roughly 40–60% of daily use) so the battery cycles fully every day, which is better for payback and battery life.</p></div>
+      <div class="faq-item"><h4>Is LiFePO4 better than lead-acid for solar storage?</h4><p>Yes. LiFePO4 supports 80–100% depth of discharge versus ~50% for lead-acid, and lasts 5,000+ cycles versus ~500. That means you need a smaller nameplate to get the same usable kWh, and it is far cheaper per kWh delivered over its life.</p></div>
+      <div class="faq-item"><h4>Can I add more battery to my solar system later?</h4><p>Yes. Modular systems such as NovaBESS HomeStack parallel from 5 kWh up to 60 kWh, so you can start with what your array and budget allow and expand as your use grows.</p></div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta">
+    <div class="container cta-inner">
+      <h2>Want a real size for your roof?</h2>
+      <p>Tell us your array size, country and daily use — we'll respond with a configured LiFePO4 solution and distributor or OEM pricing.</p>
+      <a href="contact.html" class="btn btn-gold">Request a Quote</a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="logo">Nova<span>BESS</span></div>
+        <p class="footer-note">Your ready-to-use energy storage partner.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="calculator.html">Calculator</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="blog/index.html">Blog</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-contact">
+        <p>Email: <a href="mailto:hello@novabess.com">hello@novabess.com</a></p>
+      </div>
+    </div>
+    <div class="footer-bar">© 2026 NovaBESS. Powered by a 40-year manufacturer.</div>
+  </footer>
+
+  <script>
+    function calc() {
+      const arrayKw = parseFloat(document.getElementById('arrayKw').value) || 0;
+      const sun = parseFloat(document.getElementById('sun').value) || 0;
+      const use = parseFloat(document.getElementById('use').value) || 0;
+      const dod = parseFloat(document.getElementById('chem').value) || 0.9;
+
+      const gen = arrayKw * sun * 0.9;            // daily generation, system derate
+      const usable = gen * dod;                    // usable stored energy
+      let recKwh = Math.min(use * 0.6, gen);       // evening/overnight load, capped by generation
+      recKwh = Math.max(0.1, recKwh);
+
+      const selfPct = use > 0 ? Math.min(100, (usable / use) * 100) : 0;
+      const exportKwh = Math.max(0, gen - use);
+
+      // model
+      let model;
+      if (recKwh < 5) model = 'HomeWall 2.5–5.1 kWh (wall-mounted)';
+      else if (recKwh < 10) model = 'HomeWall 5.1–10.2 kWh / HomeStack 5–10 kWh';
+      else if (recKwh < 20) model = 'HomeStack 10–15 kWh (parallel to 30 kWh)';
+      else if (recKwh < 40) model = 'HomeStack 15–30 kWh (parallel to 60 kWh)';
+      else model = 'Multiple HomeStack units (parallel up to 60 kWh+)';
+
+      // verdict
+      const v = document.getElementById('verdict');
+      let band, txt;
+      if (selfPct >= 80) { band = 'good'; txt = 'Excellent — your array covers most of your use, and this battery captures the evening surplus. High self-sufficiency.'; }
+      else if (selfPct >= 50) { band = 'good'; txt = 'Healthy — solar + this battery cover roughly half your daily use. Good self-consumption base.'; }
+      else if (selfPct >= 25) { band = 'warn'; txt = 'Partial — the battery helps with evening peaks, but your array is small relative to use. Consider a larger array or TOU arbitrage.'; }
+      else { band = 'bad'; txt = 'Low coverage — your consumption far exceeds solar generation. The battery still helps with peak/off-peak arbitrage and backup.'; }
+      v.className = 'verdict ' + band;
+      v.textContent = txt;
+
+      document.getElementById('out-kwh').textContent = recKwh.toFixed(1) + ' kWh';
+      document.getElementById('out-sub').textContent = 'recommended battery capacity';
+      document.getElementById('out-model').textContent = 'Recommended: ' + model;
+      document.getElementById('r-gen').textContent = gen.toFixed(1) + ' kWh';
+      document.getElementById('r-usable').textContent = usable.toFixed(1) + ' kWh';
+      document.getElementById('r-self').textContent = Math.round(selfPct) + '%';
+      document.getElementById('r-export').textContent = exportKwh.toFixed(1) + ' kWh';
+
+      document.getElementById('lead-msg').value =
+        'Solar battery size calculator result — Recommended: ' + recKwh.toFixed(1) + ' kWh (' + model + '). ' +
+        'Array: ' + arrayKw + ' kW, ' + sun + ' sun hrs, ' + use + ' kWh/day use. ' +
+        'Self-sufficiency ~' + Math.round(selfPct) + '%. Requesting tailored quote.';
+    }
+
+    function openLead() {
+      document.getElementById('leadForm').classList.add('show');
+    }
+    async function submitLead(e) {
+      e.preventDefault();
+      const form = document.getElementById('leadForm');
+      const data = {
+        access_key: form.access_key.value,
+        name: form.name.value,
+        email: form.email.value,
+        country: form.country.value,
+        subject: form.subject.value,
+        message: form.message.value
+      };
+      try {
+        const r = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(data)
+        });
+        if (r.ok) {
+          form.classList.remove('show');
+          document.getElementById('leadOk').classList.add('show');
+        }
+      } catch (err) { /* silent */ }
+    }
+    calc();
+  </script>
+</body>
+</html>
