@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solar Battery Cost per kWh Calculator (2026) | NovaBESS</title>
+  <meta name="description" content="Free solar battery cost per kWh calculator. Enter capacity + price to see your $/kWh vs LiFePO4 market ranges, and lifetime $/kWh-cycle vs lead-acid. No email required." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="canonical" href="https://novabess.com/solar-battery-cost-calculator.html" />
+  <link rel="alternate" hreflang="en" href="https://novabess.com/solar-battery-cost-calculator.html" />
+  <link rel="alternate" hreflang="x-default" href="https://novabess.com/solar-battery-cost-calculator.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Solar Battery Cost per kWh Calculator (2026) | NovaBESS" />
+  <meta property="og:description" content="Enter capacity + price to see your $/kWh vs market ranges and lifetime $/kWh-cycle." />
+  <meta property="og:url" content="https://novabess.com/solar-battery-cost-calculator.html" />
+  <meta property="og:image" content="https://novabess.com/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Solar Battery Cost per kWh Calculator (2026) | NovaBESS" />
+  <meta name="twitter:description" content="Enter capacity + price to see your $/kWh vs market ranges and lifetime $/kWh-cycle." />
+  <meta name="twitter:image" content="https://novabess.com/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Solar Battery Cost per kWh Calculator (2026)",
+    "description": "Interactive calculator that converts a battery's capacity and quoted price into cost per usable kWh, compares it with 2026 LiFePO4 market ranges, and shows lifetime cost per kWh-cycle versus lead-acid.",
+    "author": { "@type": "Organization", "name": "NovaBESS", "url": "https://novabess.com/" },
+    "datePublished": "2026-07-23",
+    "dateModified": "2026-07-23"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "What does cost per kWh mean for a solar battery?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Cost per kWh = total system price divided by usable capacity in kWh. It is the fairest way to compare batteries because it normalises size. Use usable (not nameplate) kWh — LiFePO4 supports 80–100% depth of discharge, while lead-acid is limited to ~50%." } },
+      { "@type": "Question", "name": "How much does a solar battery cost per kWh in 2026?",
+        "acceptedAnswer": { "@type": "Answer", "text": "In 2026, LiFePO4 equipment (cells + BMS + enclosure) typically runs $400–900 per usable kWh; turnkey installed systems with labor and inverter run $800–1,500 per kWh. Lead-acid equipment is cheaper at $150–300 per kWh but lasts far fewer cycles." } },
+      { "@type": "Question", "name": "Is LiFePO4 cheaper per kWh than lead-acid over its lifetime?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes, decisively. Spread over 5,000 cycles, LiFePO4 lands near $0.12 per usable kWh-cycle. Lead-acid at ~500 cycles costs about $0.50 per kWh-cycle — roughly 4x more per unit of energy delivered, before counting the labour of repeated replacements." } },
+      { "@type": "Question", "name": "How do I lower my solar battery cost per kWh?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Three levers: (1) go larger and modular — per-kWh price drops as capacity rises (e.g. HomeStack scales 5 kWh to 60 kWh); (2) buy at volume or via OEM/ODM rather than retail; (3) maximise cycle life by choosing LiFePO4 with 5,000+ cycles and a quality BMS." } }
+    ]
+  }
+  </script>
+  <style>
+    .calc-wrap { max-width: 1040px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+    .calc-form, .calc-result { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 28px; }
+    .calc-result { background: var(--bg-soft); }
+    .field { margin-bottom: 18px; }
+    .field label { display: block; font-size: 14px; font-weight: 600; color: var(--navy-1); margin-bottom: 7px; }
+    .field .hint { font-weight: 400; color: var(--muted); font-size: 12px; }
+    .field input[type=number] { width: 100%; padding: 12px 14px; border: 1px solid var(--line); border-radius: 9px; font-size: 16px; font-family: inherit; }
+    .field input:focus { outline: none; border-color: var(--gold); }
+    .calc-result h3 { color: var(--navy-1); font-size: 17px; margin-bottom: 14px; }
+    .res-hero { background: var(--navy-1); color: #fff; border-radius: 12px; padding: 18px 20px; margin-bottom: 14px; text-align: center; }
+    .res-hero .big { font-size: 36px; font-weight: 800; color: var(--gold-soft); }
+    .res-hero .sub { font-size: 13px; color: #cdd8ec; margin-top: 4px; }
+    .verdict { font-size: 14px; line-height: 1.5; padding: 12px 14px; border-radius: 10px; margin-bottom: 18px; }
+    .verdict.good { background: #eaf3de; color: #27500a; border: 1px solid #b9d89a; }
+    .verdict.warn { background: #fdf3da; color: #6b4e00; border: 1px solid #e7cf8a; }
+    .verdict.bad  { background: #fde6e6; color: #6b1414; border: 1px solid #e7a8a8; }
+    .cmp { width: 100%; border-collapse: collapse; margin-bottom: 18px; font-size: 14px; }
+    .cmp caption { text-align: left; font-size: 13px; font-weight: 700; color: var(--navy-1); margin-bottom: 8px; }
+    .cmp th, .cmp td { padding: 10px 12px; border-bottom: 1px solid var(--line); text-align: left; }
+    .cmp th { font-size: 12px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .03em; }
+    .cmp td.num { text-align: right; font-variant-numeric: tabular-nums; color: var(--navy-1); font-weight: 600; }
+    .cmp tr.you td { background: #fff7e6; }
+    .cmp tr.you td:first-child { border-left: 3px solid var(--gold); }
+    .cmp .tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 99px; margin-left: 6px; }
+    .tag.hi { background: #27500a; color: #eaf3de; }
+    .tag.mid { background: #6b4e00; color: #fdf3da; }
+    .tag.lo { background: #6b1414; color: #fde6e6; }
+    .lead-box { margin-top: 6px; border-top: 1px dashed var(--line); padding-top: 18px; }
+    .lead-box p { font-size: 14px; color: var(--muted); margin-bottom: 12px; }
+    .mini-form { display: none; flex-direction: column; gap: 10px; margin-top: 8px; }
+    .mini-form.show { display: flex; }
+    .mini-form input { padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; font-size: 14px; font-family: inherit; }
+    .mini-ok { display: none; background: #eaf3de; color: #27500a; border-radius: 10px; padding: 14px; font-size: 14px; text-align: center; }
+    .mini-ok.show { display: block; }
+    .disclaimer-sm { font-size: 12px; color: var(--muted); margin-top: 14px; line-height: 1.5; }
+    @media (max-width: 880px) { .calc-wrap { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <!-- ===== NAV ===== -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">Nova<span>BESS</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="calculator.html" class="active">Calculator</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="blog/index.html">Blog</a>
+        <a href="oem-odm.html">OEM/ODM</a>
+        <a href="case-studies.html">Cases</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="contact.html" class="btn btn-gold nav-cta">Get a Free Quote</a>
+    </div>
+  </header>
+
+  <!-- ===== PAGE HEAD ===== -->
+  <section class="page-head">
+    <div class="container">
+      <h1>Solar Battery Cost per kWh Calculator</h1>
+      <p>Enter your battery's <b>capacity</b> and <b>quoted price</b> — see your cost per usable kWh against 2026 market ranges, plus lifetime cost per kWh-cycle vs lead-acid. <b>No email required to use it.</b></p>
+    </div>
+  </section>
+
+  <!-- ===== CALCULATOR ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="calc-wrap">
+        <!-- INPUT -->
+        <div class="calc-form">
+          <div class="field">
+            <label>Usable battery capacity <span class="hint">(kWh)</span></label>
+            <input type="number" id="cap" value="10" min="0.1" step="0.1" oninput="calc()" />
+          </div>
+          <div class="field">
+            <label>Total system price <span class="hint">($ USD, quoted)</span></label>
+            <input type="number" id="price" value="6500" min="0" step="50" oninput="calc()" />
+          </div>
+          <div class="field">
+            <label>Cycle life <span class="hint">(cycles, optional — default 5,000 for LiFePO4)</span></label>
+            <input type="number" id="cycles" value="5000" min="1" step="100" oninput="calc()" />
+          </div>
+          <p class="disclaimer-sm">Enter your quoted price in USD. "Usable" means usable kWh (LiFePO4 ~80–100% DoD). Output is indicative and for comparison only — a tailored quote confirms exact sizing and pricing for your market.</p>
+        </div>
+
+        <!-- RESULT -->
+        <div class="calc-result">
+          <div class="res-hero">
+            <div class="big" id="out-perkwh">$650 /kWh</div>
+            <div class="sub" id="out-sub">your cost per usable kWh</div>
+          </div>
+          <div class="verdict good" id="verdict">Within the typical LiFePO4 equipment range ($400–900/kWh). Healthy.</div>
+
+          <table class="cmp">
+            <caption>Where your $/kWh sits</caption>
+            <thead><tr><th>Option</th><th style="text-align:right">$ / usable kWh</th></tr></thead>
+            <tbody>
+              <tr class="you"><td>Your system</td><td class="num" id="r-you">$650</td></tr>
+              <tr><td>LiFePO4 — equipment only</td><td class="num">$400–900</td></tr>
+              <tr><td>LiFePO4 — installed (turnkey)</td><td class="num">$800–1,500</td></tr>
+              <tr><td>Lead-acid — equipment only</td><td class="num">$150–300</td></tr>
+            </tbody>
+          </table>
+
+          <table class="cmp">
+            <caption>Lifetime cost per kWh-cycle <span class="hint">(lower is better)</span></caption>
+            <thead><tr><th>Option</th><th style="text-align:right">$ / kWh-cycle</th></tr></thead>
+            <tbody>
+              <tr class="you"><td>Your system <span class="tag" id="r-you-tag">—</span></td><td class="num" id="r-you-cycle">—</td></tr>
+              <tr><td>LiFePO4 — typical (5,000 cyc)</td><td class="num">~$0.12</td></tr>
+              <tr><td>Lead-acid — typical (500 cyc)</td><td class="num">~$0.50</td></tr>
+            </tbody>
+          </table>
+
+          <div class="lead-box">
+            <p>Want this configured for <b>your</b> site with distributor or OEM pricing? Leave your email — we reply within 24h, no obligation.</p>
+            <button type="button" class="btn btn-gold" onclick="openLead()">Get a Tailored Quote — Free</button>
+            <form class="mini-form" id="leadForm" onsubmit="submitLead(event)">
+              <input type="text" name="name" placeholder="Your name *" required />
+              <input type="email" name="email" placeholder="Your email *" required />
+              <input type="text" name="country" placeholder="Country" />
+              <input type="hidden" name="access_key" value="7318fa87-c77b-4735-8370-19302d67c0a9" />
+              <input type="hidden" name="subject" value="Solar battery $/kWh calculator lead — NovaBESS" />
+              <input type="hidden" name="message" id="lead-msg" value="" />
+              <button type="submit" class="btn btn-gold">Send my request</button>
+            </form>
+            <div class="mini-ok" id="leadOk">Thanks — we'll send your tailored quote within 24h.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section section-dark">
+    <div class="container">
+      <h2 class="section-title light">Calculator FAQ</h2>
+      <div class="faq-item"><h4>What does cost per kWh mean for a solar battery?</h4><p>Cost per kWh = total system price divided by usable capacity in kWh. It is the fairest way to compare batteries because it normalises size. Use usable (not nameplate) kWh — LiFePO4 supports 80–100% depth of discharge, while lead-acid is limited to about 50%.</p></div>
+      <div class="faq-item"><h4>How much does a solar battery cost per kWh in 2026?</h4><p>In 2026, LiFePO4 equipment (cells + BMS + enclosure) typically runs $400–900 per usable kWh; turnkey installed systems with labor and inverter run $800–1,500 per kWh. Lead-acid equipment is cheaper at $150–300 per kWh but lasts far fewer cycles.</p></div>
+      <div class="faq-item"><h4>Is LiFePO4 cheaper per kWh than lead-acid over its lifetime?</h4><p>Yes, decisively. Spread over 5,000 cycles, LiFePO4 lands near $0.12 per usable kWh-cycle. Lead-acid at about 500 cycles costs roughly $0.50 per kWh-cycle — about 4x more per unit of energy delivered, before counting the labor of repeated replacements.</p></div>
+      <div class="faq-item"><h4>How do I lower my solar battery cost per kWh?</h4><p>Three levers: go larger and modular (per-kWh price drops as capacity rises — HomeStack scales 5 kWh to 60 kWh); buy at volume or via OEM/ODM rather than retail; and maximise cycle life by choosing LiFePO4 with 5,000+ cycles and a quality BMS.</p></div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta">
+    <div class="container cta-inner">
+      <h2>Want a real quote for your capacity?</h2>
+      <p>Tell us your country, application and target kWh — we'll respond with a configured LiFePO4 solution and distributor or OEM pricing.</p>
+      <a href="contact.html" class="btn btn-gold">Request a Quote</a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="logo">Nova<span>BESS</span></div>
+        <p class="footer-note">Your ready-to-use energy storage partner.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="calculator.html">Calculator</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="blog/index.html">Blog</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-contact">
+        <p>Email: <a href="mailto:hello@novabess.com">hello@novabess.com</a></p>
+      </div>
+    </div>
+    <div class="footer-bar">© 2026 NovaBESS. Powered by a 40-year manufacturer.</div>
+  </footer>
+
+  <script>
+    const MARKET = { lifepo4EquipLo: 400, lifepo4EquipHi: 900, lifepo4InstHi: 1500, leadEquipHi: 300 };
+
+    function calc() {
+      const kwh = parseFloat(document.getElementById('cap').value) || 0;
+      const price = parseFloat(document.getElementById('price').value) || 0;
+      let cyc = parseFloat(document.getElementById('cycles').value) || 0;
+      if (cyc <= 0) cyc = 5000;
+
+      const perkwh = (kwh > 0 && price > 0) ? price / kwh : 0;
+      const percycle = (perkwh > 0) ? perkwh / cyc : 0;
+
+      // hero
+      document.getElementById('out-perkwh').textContent = perkwh > 0 ? '$' + Math.round(perkwh).toLocaleString() + ' /kWh' : '— /kWh';
+      document.getElementById('out-sub').textContent = 'your cost per usable kWh' + (perkwh > 0 ? ' over ' + cyc.toLocaleString() + ' cycles' : '');
+
+      // verdict + band tag for "your" row
+      const v = document.getElementById('verdict');
+      const tag = document.getElementById('r-you-tag');
+      let band;
+      if (perkwh <= 0) {
+        v.className = 'verdict warn';
+        v.textContent = 'Enter capacity and price to see your cost per kWh.';
+        band = '';
+      } else if (perkwh < MARKET.lifepo4EquipLo) {
+        v.className = 'verdict warn';
+        v.textContent = 'Below typical equipment pricing — confirm it includes BMS, enclosure and certifications (not just cells).';
+        band = 'lo';
+      } else if (perkwh <= MARKET.lifepo4EquipHi) {
+        v.className = 'verdict good';
+        v.textContent = 'Within the typical LiFePO4 equipment range ($400–900/kWh). Healthy.';
+        band = 'hi';
+      } else if (perkwh <= MARKET.lifepo4InstHi) {
+        v.className = 'verdict good';
+        v.textContent = 'Near installed-system pricing ($800–1,500/kWh). Reasonable if it includes labor and inverter.';
+        band = 'mid';
+      } else {
+        v.className = 'verdict bad';
+        v.textContent = 'Above typical installed pricing — request a quote comparison before committing.';
+        band = 'lo';
+      }
+      tag.className = 'tag ' + (band || 'mid');
+      tag.textContent = band === 'hi' ? 'great' : band === 'mid' ? 'ok' : band === 'lo' ? 'check' : '—';
+
+      // table 1 — your row
+      document.getElementById('r-you').textContent = perkwh > 0 ? '$' + Math.round(perkwh).toLocaleString() : '—';
+
+      // table 2 — lifetime
+      document.getElementById('r-you-cycle').textContent = percycle > 0 ? '$' + percycle.toFixed(2) : '—';
+
+      // lead message
+      document.getElementById('lead-msg').value =
+        'Solar battery $/kWh calculator result — ' +
+        (perkwh > 0 ? '$' + Math.round(perkwh).toLocaleString() + '/kWh' : 'n/a') +
+        ' for ' + (kwh > 0 ? kwh + ' kWh' : 'n/a') +
+        ' over ' + cyc.toLocaleString() + ' cycles. Requesting tailored quote.';
+    }
+
+    function openLead() {
+      document.getElementById('leadForm').classList.add('show');
+    }
+    async function submitLead(e) {
+      e.preventDefault();
+      const form = document.getElementById('leadForm');
+      const data = {
+        access_key: form.access_key.value,
+        name: form.name.value,
+        email: form.email.value,
+        country: form.country.value,
+        subject: form.subject.value,
+        message: form.message.value
+      };
+      try {
+        const r = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(data)
+        });
+        if (r.ok) {
+          form.classList.remove('show');
+          document.getElementById('leadOk').classList.add('show');
+        }
+      } catch (err) { /* silent */ }
+    }
+    calc();
+  </script>
+</body>
+</html>

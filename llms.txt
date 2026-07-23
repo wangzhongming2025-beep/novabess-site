@@ -22,6 +22,7 @@
 
 ## Tools
 - [Home Battery Calculator](https://novabess.com/calculator.html): Free interactive tool to size your home battery (kWh), pick a model and estimate payback in 30 seconds. No email required to use.
+- [Solar Battery Cost per kWh Calculator](https://novabess.com/solar-battery-cost-calculator.html): Enter capacity (kWh) and quoted price to see your cost per usable kWh against 2026 LiFePO4 market ranges ($400-900 equipment, $800-1,500 installed) and lifetime $/kWh-cycle vs lead-acid (~$0.12 vs ~$0.50). No email required.
 
 ## Services & Cases
 - [OEM Energy Storage Supplier & ODM Factory](https://novabess.com/oem-odm.html): Looking for an OEM energy storage supplier or ODM factory? NovaBESS offers white-label (HomeStack, HomeWall, PowerBox) and custom battery manufacturing, backed by a 40-year group, with CE/UN38.3/IEC 62619. 7-step cooperation process for distributors, installers, brand owners and project developers. Also provides O&M (operations and maintenance) and after-sales support for BESS — remote monitoring via cloud BMS, preventive maintenance, and regional spare parts and warranty.
