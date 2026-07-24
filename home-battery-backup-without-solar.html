@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Battery Backup Without Solar — Calculator &amp; Sizing | NovaBESS</title>
+  <meta name="description" content="Home battery backup without solar: size by essential load and hours, see the right kWh and payback via peak/off-peak arbitrage. Free calculator." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="canonical" href="https://novabess.com/home-battery-backup-without-solar.html" />
+  <link rel="alternate" hreflang="en" href="https://novabess.com/home-battery-backup-without-solar.html" />
+  <link rel="alternate" hreflang="x-default" href="https://novabess.com/home-battery-backup-without-solar.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Home Battery Backup Without Solar — Calculator &amp; Sizing | NovaBESS" />
+  <meta property="og:description" content="Size a no-solar grid battery by essential load and hours — capacity in kWh, cost, and payback from peak/off-peak arbitrage." />
+  <meta property="og:url" content="https://novabess.com/home-battery-backup-without-solar.html" />
+  <meta property="og:image" content="https://novabess.com/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Home Battery Backup Without Solar — Calculator &amp; Sizing | NovaBESS" />
+  <meta name="twitter:description" content="Size a no-solar grid battery by essential load and hours — capacity in kWh, cost, and payback from peak/off-peak arbitrage." />
+  <meta name="twitter:image" content="https://novabess.com/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Home Battery Backup Without Solar — Calculator & Sizing",
+    "description": "Interactive calculator that sizes a grid-charged home battery backup (no solar) by essential load and hours of autonomy, and estimates payback from peak/off-peak arbitrage.",
+    "author": { "@type": "Organization", "name": "NovaBESS", "url": "https://novabess.com/" },
+    "datePublished": "2026-07-24",
+    "dateModified": "2026-07-24"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Can I have a home battery backup without solar?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. A battery charges from the grid when power is normal and supplies your home automatically during an outage (islanding). No rooftop PV is required — solar only adds free recharge during extended blackouts. Use the calculator above to size one by your essential load and hours of backup." } },
+      { "@type": "Question", "name": "How big a battery do I need for backup without solar?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Multiply your essential backup load in watts by the hours you want to ride one charge, then divide by depth of discharge. A 1,500 W load for 8 hours needs 12 kWh usable; at 90% DoD that is about 13.3 kWh nameplate. Because there is no solar to recharge it, the bank only lasts as long as you size it — size for the hours you cannot be without power." } },
+      { "@type": "Question", "name": "Does a no-solar battery pay for itself?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Only if you use time-of-use arbitrage: charge off-peak (cheap) overnight and discharge during peak hours. That daily spread is the real payback. Used purely for backup, the battery has no energy-bill savings — its value is avoided outage losses (food spoilage, lost work, comfort) and lower generator cost. The calculator shows both." } },
+      { "@type": "Question", "name": "How do you calculate payback for a battery without solar?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Annual saving = (peak rate - off-peak rate) x usable kWh x round-trip efficiency x arbitrage cycles per day x 365. Payback years = system cost / annual saving. Example: a 13 kWh bank with a $0.23/kWh spread, one cycle/day and 90% efficiency saves about $900/year, paying back a ~$8,000 system in roughly 9 years." } },
+      { "@type": "Question", "name": "Is a no-solar battery better than a generator for backup?",
+        "acceptedAnswer": { "@type": "Answer", "text": "For short, frequent outages a battery is quieter, instant, and maintenance-free, and it also earns from arbitrage. A generator is cheaper per kWh stored and better for open-ended, multi-day blackouts. Many homes pair a smaller battery with a generator for the worst cases." } }
+    ]
+  }
+  </script>
+  <style>
+    .calc-wrap { max-width: 1040px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+    .calc-form, .calc-result { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 28px; }
+    .calc-result { background: var(--bg-soft); }
+    .field { margin-bottom: 18px; }
+    .field label { display: block; font-size: 14px; font-weight: 600; color: var(--navy-1); margin-bottom: 7px; }
+    .field .hint { font-weight: 400; color: var(--muted); font-size: 12px; }
+    .field input, .field select { width: 100%; padding: 12px 14px; border: 1px solid var(--line); border-radius: 9px; font-size: 16px; font-family: inherit; box-sizing: border-box; }
+    .field input:focus, .field select:focus { outline: none; border-color: var(--gold); }
+    .calc-result h3 { color: var(--navy-1); font-size: 17px; margin-bottom: 14px; }
+    .res-hero { background: var(--navy-1); color: #fff; border-radius: 12px; padding: 18px 20px; margin-bottom: 14px; text-align: center; }
+    .res-hero .big { font-size: 36px; font-weight: 800; color: var(--gold-soft); }
+    .res-hero .sub { font-size: 13px; color: #cdd8ec; margin-top: 4px; }
+    .verdict { font-size: 14px; line-height: 1.5; padding: 12px 14px; border-radius: 10px; margin-bottom: 18px; }
+    .verdict.good { background: #eaf3de; color: #27500a; border: 1px solid #b9d89a; }
+    .verdict.warn { background: #fdf3da; color: #6b4e00; border: 1px solid #e7cf8a; }
+    .res-model { background: #fff; border: 1px solid var(--gold); border-radius: 12px; padding: 14px 16px; margin-bottom: 16px; font-size: 15px; color: var(--navy-2); }
+    .res-row { display: flex; justify-content: space-between; padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+    .res-row:last-of-type { border-bottom: none; }
+    .res-row span { color: var(--muted); }
+    .res-row strong { color: var(--navy-1); font-size: 17px; }
+    .lead-box { margin-top: 18px; border-top: 1px dashed var(--line); padding-top: 18px; }
+    .lead-box p { font-size: 14px; color: var(--muted); margin-bottom: 12px; }
+    .mini-form { display: none; flex-direction: column; gap: 10px; margin-top: 8px; }
+    .mini-form.show { display: flex; }
+    .mini-form input { padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; font-size: 14px; font-family: inherit; box-sizing: border-box; }
+    .mini-ok { display: none; background: #eaf3de; color: #27500a; border-radius: 10px; padding: 14px; font-size: 14px; text-align: center; }
+    .mini-ok.show { display: block; }
+    .disclaimer-sm { font-size: 12px; color: var(--muted); margin-top: 14px; line-height: 1.5; }
+    @media (max-width: 880px) { .calc-wrap { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <!-- ===== NAV ===== -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">Nova<span>BESS</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="calculator.html" class="active">Calculator</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="blog/index.html">Blog</a>
+        <a href="oem-odm.html">OEM/ODM</a>
+        <a href="case-studies.html">Cases</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="contact.html" class="btn btn-gold nav-cta">Get a Free Quote</a>
+    </div>
+  </header>
+
+  <!-- ===== PAGE HEAD ===== -->
+  <section class="page-head">
+    <div class="container">
+      <h1>Home Battery Backup Without Solar</h1>
+      <p>No rooftop PV? You can still run a battery as a quiet, automatic backup. Enter your <b>essential load</b> and <b>hours of backup</b> — see the right capacity in kWh, the cost, and the payback from <b>peak/off-peak arbitrage</b>. <b>No email required to use it.</b></p>
+    </div>
+  </section>
+
+  <!-- ===== CALCULATOR ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="calc-wrap">
+        <!-- INPUT -->
+        <div class="calc-form">
+          <div class="field">
+            <label>Essential load to back up <span class="hint">(watts total)</span></label>
+            <input type="number" id="loadW" value="1500" min="1" step="50" oninput="calc()" />
+          </div>
+          <div class="field">
+            <label>Backup per charge <span class="hint">(hours you want to ride on one charge)</span></label>
+            <input type="number" id="hours" value="8" min="0.5" step="0.5" oninput="calc()" />
+          </div>
+          <div class="field">
+            <label>Battery chemistry</label>
+            <select id="chem" onchange="calc()">
+              <option value="0.9">LiFePO4 (90% usable / DoD)</option>
+              <option value="0.5">Lead-acid (50% usable / DoD)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Peak electricity rate <span class="hint">($/kWh)</span></label>
+            <input type="number" id="peak" value="0.35" min="0" step="0.01" oninput="calc()" />
+          </div>
+          <div class="field">
+            <label>Off-peak rate <span class="hint">($/kWh, what you charge at night)</span></label>
+            <input type="number" id="off" value="0.12" min="0" step="0.01" oninput="calc()" />
+          </div>
+          <div class="field">
+            <label>System price <span class="hint">($/kWh, equipment estimate)</span></label>
+            <input type="number" id="price" value="600" min="0" step="10" oninput="calc()" />
+          </div>
+          <div class="field">
+            <label>Arbitrage cycles / day <span class="hint">(1 = charge overnight, discharge peak)</span></label>
+            <input type="number" id="cycles" value="1" min="0" step="1" oninput="calc()" />
+          </div>
+          <p class="disclaimer-sm">Usable kWh = load (kW) x hours. Nameplate = usable / depth of discharge. Daily arbitrage saving = (peak - off-peak) x usable x 0.9 efficiency x cycles. Without solar the bank lasts only as long as you size it — for multi-day outages add a generator or PV. Figures are indicative; a tailored quote confirms exact sizing and inverter compatibility.</p>
+        </div>
+
+        <!-- RESULT -->
+        <div class="calc-result">
+          <div class="res-hero">
+            <div class="big" id="out-kwh">— kWh</div>
+            <div class="sub" id="out-sub">battery capacity to buy</div>
+          </div>
+          <div class="verdict good" id="verdict">—</div>
+
+          <div class="res-model" id="out-model">—</div>
+
+          <div class="res-row"><span>Runtime per charge</span><strong id="r-hours">—</strong></div>
+          <div class="res-row"><span>Daily arbitrage saving</span><strong id="r-day">—</strong></div>
+          <div class="res-row"><span>Annual saving</span><strong id="r-year">—</strong></div>
+          <div class="res-row"><span>Est. system cost</span><strong id="r-cost">—</strong></div>
+          <div class="res-row"><span>Payback period</span><strong id="r-pay">—</strong></div>
+
+          <div class="lead-box">
+            <p>Want this configured for <b>your</b> loads and tariff with distributor or OEM pricing? Leave your email — we reply within 24h, no obligation.</p>
+            <button type="button" class="btn btn-gold" onclick="openLead()">Get a Tailored Quote — Free</button>
+            <form class="mini-form" id="leadForm" onsubmit="submitLead(event)">
+              <input type="text" name="name" placeholder="Your name *" required />
+              <input type="email" name="email" placeholder="Your email *" required />
+              <input type="text" name="country" placeholder="Country" />
+              <input type="hidden" name="access_key" value="7318fa87-c77b-4735-8370-19302d67c0a9" />
+              <input type="hidden" name="subject" value="No-solar backup calculator lead — NovaBESS" />
+              <input type="hidden" name="message" id="lead-msg" value="" />
+              <button type="submit" class="btn btn-gold">Send my request</button>
+            </form>
+            <div class="mini-ok" id="leadOk">Thanks — we'll send your tailored quote within 24h.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS (no solar) ===== -->
+  <section class="section section-dark">
+    <div class="container">
+      <h2 class="section-title light">How a no-solar battery works as backup</h2>
+      <p style="color:#cdd8ec;max-width:880px;line-height:1.85;">A home battery does not need rooftop panels to protect you from blackouts. It charges from the grid like a phone when power is normal, then <b>islands</b> your home the instant the grid drops — your lights, fridge and internet keep running with no click, no fuel, no warm-up. Solar only adds one thing: free recharge during a long outage. Without it, the bank runs for exactly the hours you sized it for, then a generator or the returning grid takes over.</p>
+      <p style="color:#cdd8ec;max-width:880px;line-height:1.85;margin-top:10px;">The honest trade-off: a no-solar battery earns its keep two ways — <b>peace of mind</b> (avoided food spoilage, lost work, discomfort) and <b>tariff arbitrage</b> (charging off-peak and discharging peak). The calculator above shows both.</p>
+    </div>
+  </section>
+
+  <!-- ===== SIZING ===== -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">What capacity is enough?</h2>
+      <p style="color:var(--muted);max-width:880px;line-height:1.85;">Size a no-solar backup by one rule: <b>essential load (kW) x hours you can't be without power = usable kWh</b>, then divide by depth of discharge. Because nothing recharges the bank, be realistic about the hours. Rough starting points:</p>
+      <table class="cmp" style="max-width:880px;">
+        <caption>Typical no-solar backup sizes</caption>
+        <thead><tr><th>What you keep on</th><th style="text-align:right">Load</th><th style="text-align:right">Hours</th><th style="text-align:right">Usable kWh</th><th>NovaBESS fit</th></tr></thead>
+        <tbody>
+          <tr><td>Fridge, lights, internet, phones</td><td class="num">~400 W</td><td class="num">12</td><td class="num">4.8</td><td>HomeWall 5.1 kWh</td></tr>
+          <tr><td>+ a small AC / heater (essentials)</td><td class="num">~1,500 W</td><td class="num">8</td><td class="num">12</td><td>HomeStack 15 kWh</td></tr>
+          <tr><td>Whole-essentials (well pump, freezer)</td><td class="num">~2,500 W</td><td class="num">24</td><td class="num">60</td><td>Multiple HomeStack (parallel 60 kWh+)</td></tr>
+        </tbody>
+      </table>
+      <p style="color:var(--muted);max-width:880px;line-height:1.85;margin-top:14px;">If your outages tend to last more than a day, pair the battery with a generator rather than oversizing the bank — a smaller battery plus a generator is usually cheaper than a giant battery you only need once a year.</p>
+    </div>
+  </section>
+
+  <!-- ===== COST & PAYBACK ===== -->
+  <section class="section section-dark">
+    <div class="container">
+      <h2 class="section-title light">Cost and how payback is calculated</h2>
+      <p style="color:#cdd8ec;max-width:880px;line-height:1.85;"><b>Cost.</b> Equipment for a LiFePO4 home battery runs about <b>$400-900 per usable kWh</b> (installed typically $800-1,500/kWh). A 13 kWh bank lands around $8,000 equipment. LiFePO4 lasts 5,000+ cycles, so lifetime cost per kWh-cycle is roughly $0.12 — far below lead-acid.</p>
+      <p style="color:#cdd8ec;max-width:880px;line-height:1.85;margin-top:10px;"><b>Payback without solar.</b> There is no self-consumption saving, so the only financial payback is <b>time-of-use arbitrage</b>:</p>
+      <p style="color:var(--gold-soft);max-width:880px;line-height:1.7;margin-top:6px;font-weight:600;">Annual saving = (peak - off-peak) x usable kWh x 0.9 x cycles/day x 365<br/>Payback (yrs) = system cost / annual saving</p>
+      <p style="color:#cdd8ec;max-width:880px;line-height:1.85;margin-top:10px;">With a $0.23/kWh spread and one cycle a day, a 13 kWh bank saves about <b>$900/year</b> and pays back in roughly <b>9 years</b> — while also covering 8 hours of backup every time the grid fails. If your tariff is flat (no peak/off-peak gap), the battery has no energy payback; its return is the value of outages you no longer suffer. Compare the math side by side in our <a href="solar-battery-cost-calculator.html" style="color:var(--gold-soft);">cost per kWh calculator</a>.</p>
+    </div>
+  </section>
+
+  <!-- ===== CLUSTER LINKS ===== -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Pick the right tool for your setup</h2>
+      <p style="color:var(--muted);max-width:880px;line-height:1.85;">These three calculators cover the home-battery word group:</p>
+      <div class="faq-item"><h4><a href="calculator.html" style="color:var(--navy-1);">Home Battery Calculator</a> — general size &amp; payback</h4><p>For grid-tied self-consumption and off-grid sizing with both tariff and solar inputs.</p></div>
+      <div class="faq-item"><h4><a href="solar-battery-backup-calculator.html" style="color:var(--navy-1);">Solar Battery Backup Calculator</a> — backup with PV</h4><p>Same load-based sizing, plus PV recharge during multi-day outages. Use this if you have (or plan) rooftop solar.</p></div>
+      <div class="faq-item"><h4>Home Battery Backup Without Solar — this page</h4><p>Pure grid backup: sizing plus peak/off-peak arbitrage payback, no solar required.</p></div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section section-dark">
+    <div class="container">
+      <h2 class="section-title light">No-solar backup FAQ</h2>
+      <div class="faq-item"><h4>Can I have a home battery backup without solar?</h4><p>Yes. A battery charges from the grid when power is normal and supplies your home automatically during an outage (islanding). No rooftop PV is required — solar only adds free recharge during extended blackouts. Use the calculator above to size one by your essential load and hours of backup.</p></div>
+      <div class="faq-item"><h4>How big a battery do I need for backup without solar?</h4><p>Multiply your essential backup load in watts by the hours you want to ride one charge, then divide by depth of discharge. A 1,500 W load for 8 hours needs 12 kWh usable; at 90% DoD that is about 13.3 kWh nameplate. Because there is no solar to recharge it, the bank only lasts as long as you size it.</p></div>
+      <div class="faq-item"><h4>Does a no-solar battery pay for itself?</h4><p>Only if you use time-of-use arbitrage: charge off-peak (cheap) overnight and discharge during peak hours. That daily spread is the real payback. Used purely for backup, the battery has no energy-bill savings — its value is avoided outage losses and lower generator cost.</p></div>
+      <div class="faq-item"><h4>How do you calculate payback for a battery without solar?</h4><p>Annual saving = (peak rate - off-peak rate) x usable kWh x round-trip efficiency x arbitrage cycles per day x 365. Payback years = system cost / annual saving. A 13 kWh bank with a $0.23/kWh spread and one cycle/day saves about $900/year, paying back a ~$8,000 system in roughly 9 years.</p></div>
+      <div class="faq-item"><h4>Is a no-solar battery better than a generator for backup?</h4><p>For short, frequent outages a battery is quieter, instant and maintenance-free, and it also earns from arbitrage. A generator is cheaper per kWh stored and better for open-ended, multi-day blackouts. Many homes pair a smaller battery with a generator for the worst cases.</p></div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta">
+    <div class="container cta-inner">
+      <h2>Want a no-solar backup sized for your home?</h2>
+      <p>Tell us your essential loads, country and tariff — we'll configure a HomeWall or HomeStack system and quote distributor or OEM pricing.</p>
+      <a href="contact.html" class="btn btn-gold">Request a Quote</a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="logo">Nova<span>BESS</span></div>
+        <p class="footer-note">Your ready-to-use energy storage partner.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="calculator.html">Calculator</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="blog/index.html">Blog</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-contact">
+        <p>Email: <a href="mailto:hello@novabess.com">hello@novabess.com</a></p>
+      </div>
+    </div>
+    <div class="footer-bar">© 2026 NovaBESS. Powered by a 40-year manufacturer.</div>
+  </footer>
+
+  <script>
+    function calc() {
+      const loadW = parseFloat(document.getElementById('loadW').value) || 0;
+      const hours = parseFloat(document.getElementById('hours').value) || 0;
+      const dod = parseFloat(document.getElementById('chem').value) || 0.9;
+      const peak = parseFloat(document.getElementById('peak').value) || 0;
+      const off = parseFloat(document.getElementById('off').value) || 0;
+      const price = parseFloat(document.getElementById('price').value) || 0;
+      const cycles = parseFloat(document.getElementById('cycles').value) || 0;
+
+      const usable = (loadW / 1000) * hours;            // kWh usable
+      const nameplate = dod > 0 ? usable / dod : usable; // nameplate to buy
+      const runtimeH = hours;                            // per one charge
+
+      let model;
+      if (nameplate < 5) model = 'HomeWall 2.5-5.1 kWh (wall-mounted, parallel to 10.2 kWh)';
+      else if (nameplate < 10) model = 'HomeWall 5.1-10.2 kWh / HomeStack 5-10 kWh';
+      else if (nameplate < 20) model = 'HomeStack 10-15 kWh (parallel up to 30 kWh)';
+      else if (nameplate < 40) model = 'HomeStack 15-30 kWh (parallel up to 60 kWh)';
+      else model = 'Multiple HomeStack units (parallel up to 60 kWh+ per group)';
+
+      const dailySave = Math.max(0, (peak - off)) * usable * 0.9 * cycles;
+      const annualSave = dailySave * 365;
+      const cost = nameplate * price;
+      const payback = annualSave > 0 ? cost / annualSave : 0;
+
+      const v = document.getElementById('verdict');
+      let band, txt;
+      if (peak > off && cycles > 0) {
+        band = 'good';
+        txt = 'Charged off-peak and discharged at peak, this ' + nameplate.toFixed(1) + ' kWh bank covers your ' + loadW + ' W load for ~' + Math.round(runtimeH) + ' h per charge AND earns about $' + Math.round(annualSave) + '/year in arbitrage — payback ~' + payback.toFixed(1) + ' yrs. No solar needed.';
+      } else {
+        band = 'warn';
+        txt = 'Pure backup mode: with no peak/off-peak spread there is no energy payback — value is avoided outage losses and lower generator cost. The bank covers your ' + loadW + ' W load for ~' + Math.round(runtimeH) + ' h per charge. For multi-day outages add a generator or PV.';
+      }
+      v.className = 'verdict ' + band;
+      v.textContent = txt;
+
+      document.getElementById('out-kwh').textContent = nameplate.toFixed(1) + ' kWh';
+      document.getElementById('out-sub').textContent = 'battery capacity to buy';
+      document.getElementById('out-model').textContent = 'Recommended: ' + model;
+      document.getElementById('r-hours').textContent = Math.round(runtimeH) + ' h/charge';
+      document.getElementById('r-day').textContent = dailySave > 0 ? '$' + dailySave.toFixed(2) : '$0';
+      document.getElementById('r-year').textContent = annualSave > 0 ? '$' + Math.round(annualSave).toLocaleString() : '$0';
+      document.getElementById('r-cost').textContent = '$' + Math.round(cost).toLocaleString();
+      document.getElementById('r-pay').textContent = payback > 0 ? payback.toFixed(1) + ' yrs' : 'no energy payoff';
+
+      document.getElementById('lead-msg').value =
+        'No-solar backup calculator result — Need ' + nameplate.toFixed(1) + ' kWh nameplate (' + usable.toFixed(1) + ' kWh usable, ' + model + '). ' +
+        'Load: ' + loadW + ' W, ' + hours + ' h/charge, DoD ' + Math.round(dod * 100) + '%. ' +
+        'Peak ' + peak + ' / Off-peak ' + off + ', ' + cycles + ' cycle(s)/day. ' +
+        'Est. cost $' + Math.round(cost).toLocaleString() + ', payback ' + (payback > 0 ? payback.toFixed(1) + ' yrs' : 'n/a') + '. Requesting tailored quote.';
+    }
+
+    function openLead() {
+      document.getElementById('leadForm').classList.add('show');
+    }
+    async function submitLead(e) {
+      e.preventDefault();
+      const form = document.getElementById('leadForm');
+      const data = {
+        access_key: form.access_key.value,
+        name: form.name.value,
+        email: form.email.value,
+        country: form.country.value,
+        subject: form.subject.value,
+        message: form.message.value
+      };
+      try {
+        const r = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(data)
+        });
+        if (r.ok) {
+          form.classList.remove('show');
+          document.getElementById('leadOk').classList.add('show');
+        }
+      } catch (err) { /* silent */ }
+    }
+    calc();
+  </script>
+</body>
+</html>
