@@ -50,6 +50,7 @@
 - [How to Choose an OEM Energy Storage Supplier](https://novabess.com/blog/how-to-choose-oem-energy-storage-supplier.html): A 2026 buyer's guide — manufacturer vs trader, certifications that clear customs (CE/UN38.3/IEC 62619), proven models, lead time and engineering support.
 - [What Does an ODM Energy Storage Factory Do?](https://novabess.com/blog/odm-energy-storage-factory.html): OEM vs ODM, what an ODM factory designs (capacity, enclosure, BMS, protocols) and when to choose custom build.
 - [48V vs 51.2V Rack Battery](https://novabess.com/blog/48v-vs-51v-rack-battery.html): Same 16-cell LiFePO4 platform under two labels. Nominal vs full-charge voltage, matching a 48V inverter, and the kWh math (51.2V x 100Ah approx 5.12 kWh). Worked example with NovaBESS HomeStack (51.2V nominal, 43.2-58.4V range, 60 kWh parallel).
+- [Battery Peak Shaving & Time-of-Use Arbitrage](https://novabess.com/blog/battery-peak-shaving-arbitrage.html): How a home battery charges cheap off-peak and discharges expensive peak to cut bills — the savings formula, real 2026 country savings ($900-1,400/yr Australia, ~£690 UK, €400+ Ireland), and which markets it pays best in (AU/UK/DE/US T1; IE/NL/DK/PL/F R T2; ZA/ES/AE weak). No solar required; inverter must support AC grid charging in TOU mode.
 
 ## Resources
 - [BESS Certifications Explained](https://novabess.com/resources/bess-certifications-explained.html): What IEC 62619, UN38.3, CE and UL mean, and which markets each unlocks.
