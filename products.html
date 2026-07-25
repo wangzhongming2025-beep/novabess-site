@@ -113,10 +113,21 @@
   <section class="product" id="homestack">
     <div class="container product-inner">
       <div class="product-visual">
-        <div class="product-hero-img">
-          <img src="images/products/homestack-hero.jpg" alt="NovaBESS HomeStack modular stackable battery system" />
+        <div class="product-hero-img" id="homestack-hero">
+          <img src="images/products/homestack-hero.jpg" alt="NovaBESS HomeStack 3-module 15 kWh stackable battery system" />
         </div>
-        <p class="photo-caption">From manufacturer catalog: stackable 5/10/15 kWh modules</p>
+        <div class="product-thumbs">
+          <div class="thumb active" onclick="setHomestack('3q')">
+            <img src="images/products/homestack-hero.jpg" alt="HomeStack 3/4 view thumbnail" />
+          </div>
+          <div class="thumb" onclick="setHomestack('front')">
+            <img src="images/products/homestack-front.jpg" alt="HomeStack front view thumbnail" />
+          </div>
+          <div class="thumb" onclick="setHomestack('side')">
+            <img src="images/products/homestack-side.jpg" alt="HomeStack side view thumbnail" />
+          </div>
+        </div>
+        <p class="photo-caption">From manufacturer catalog: 3-module 15 kWh stack (expand to 60 kWh with 12 parallel)</p>
       </div>
       <div class="product-info">
         <span class="badge">Residential · Modular</span>
@@ -186,10 +197,21 @@
   <section class="product" id="powerbox">
     <div class="container product-inner">
       <div class="product-visual">
-        <div class="product-hero-img">
-          <img src="images/products/powerbox-hero.jpg" alt="NovaBESS PowerBox wheeled industrial portable power station on construction site" />
+        <div class="product-hero-img" id="powerbox-hero">
+          <img src="images/products/powerbox-hero.jpg" alt="NovaBESS PowerBox 16 kWh wheeled industrial portable power station front view" />
         </div>
-        <p class="photo-caption">From manufacturer catalog: 4/8/16 kWh portable power station</p>
+        <div class="product-thumbs">
+          <div class="thumb active" onclick="setPowerbox('front')">
+            <img src="images/products/powerbox-hero.jpg" alt="PowerBox front view thumbnail" />
+          </div>
+          <div class="thumb" onclick="setPowerbox('right')">
+            <img src="images/products/powerbox-side-right.jpg" alt="PowerBox right side terminal view thumbnail" />
+          </div>
+          <div class="thumb" onclick="setPowerbox('left')">
+            <img src="images/products/powerbox-side-left.jpg" alt="PowerBox left side handle view thumbnail" />
+          </div>
+        </div>
+        <p class="photo-caption">From manufacturer catalog: 16 kWh flagship wheeled portable power station (4/8/16 kWh range)</p>
       </div>
       <div class="product-info">
         <span class="badge">Industrial · Mobile</span>
@@ -310,6 +332,44 @@
     } else {
       hero.src = 'images/products/homewall-lifestyle.jpg';
       hero.alt = 'NovaBESS HomeWall installed in a living room';
+      allThumbs[2].classList.add('active');
+    }
+  }
+
+  function setPowerbox(view) {
+    const hero = document.querySelector('#powerbox-hero img');
+    const allThumbs = document.querySelectorAll('#powerbox .thumb');
+    allThumbs.forEach(t => t.classList.remove('active'));
+    if (view === 'front') {
+      hero.src = 'images/products/powerbox-hero.jpg';
+      hero.alt = 'NovaBESS PowerBox 16 kWh front view with LCD display';
+      allThumbs[0].classList.add('active');
+    } else if (view === 'right') {
+      hero.src = 'images/products/powerbox-side-right.jpg';
+      hero.alt = 'NovaBESS PowerBox right side showing output terminals and breaker';
+      allThumbs[1].classList.add('active');
+    } else {
+      hero.src = 'images/products/powerbox-side-left.jpg';
+      hero.alt = 'NovaBESS PowerBox left side showing carry handle and AC inputs';
+      allThumbs[2].classList.add('active');
+    }
+  }
+
+  function setHomestack(view) {
+    const hero = document.querySelector('#homestack-hero img');
+    const allThumbs = document.querySelectorAll('#homestack .thumb');
+    allThumbs.forEach(t => t.classList.remove('active'));
+    if (view === '3q') {
+      hero.src = 'images/products/homestack-hero.jpg';
+      hero.alt = 'NovaBESS HomeStack 3-module 15 kWh 3/4 angle view';
+      allThumbs[0].classList.add('active');
+    } else if (view === 'front') {
+      hero.src = 'images/products/homestack-front.jpg';
+      hero.alt = 'NovaBESS HomeStack front view with LCD control panel';
+      allThumbs[1].classList.add('active');
+    } else {
+      hero.src = 'images/products/homestack-side.jpg';
+      hero.alt = 'NovaBESS HomeStack side view showing carry handles per module';
       allThumbs[2].classList.add('active');
     }
   }
