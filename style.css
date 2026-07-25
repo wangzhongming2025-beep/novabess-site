@@ -195,6 +195,14 @@ a { color: inherit; text-decoration: none; }
 .footer-links a { color: rgba(255,255,255,.8); font-size: 14px; text-decoration: none; }
 .footer-links a:hover { color: var(--gold); }
 
+/* CALC LINK ROWS (homepage hero + CTA) */
+.hero-calc-links { font-size: 14px; color: #cdd8ec; margin-top: 16px; line-height: 1.7; }
+.hero-calc-links a { color: var(--gold-soft); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.hero-calc-links a:hover { color: #fff; }
+.cta-calc-links { font-size: 14px; color: var(--muted); margin-top: 14px; line-height: 1.7; }
+.cta-calc-links a { color: var(--navy-1); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.cta-calc-links a:hover { color: var(--gold); }
+
 /* RESPONSIVE */
 @media (max-width: 880px) {
   .hero-inner, .product-inner, .contact-grid, .cards, .features, .factory-grid, .about-why .cards, .product-grid, .gallery { grid-template-columns: 1fr; }
