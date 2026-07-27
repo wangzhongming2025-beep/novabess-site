@@ -60,6 +60,9 @@
 - [Portable Power Station vs Generator](https://novabess.com/blog/portable-power-station-vs-generator.html): Plain-English comparison for home backup — fuel, noise, indoor safety, runtime, refuel, output, maintenance, cost, weight, apartment fit. Why a wheeled LiFePO4 station (no fuel, no fumes, indoor-safe) wins for most homes; PowerBox 4/8/16 kWh specs.
 - [Plug-In Battery vs Portable Power Station](https://novabess.com/blog/plug-in-battery-no-install.html): What "no-install" backup really means — socket-feed plug-in batteries (whole-circuit, ~800 W) vs device-plug portable power stations (PowerBox). Renter fit, no-electrician benefits, and where the plug-in category is booming (Germany, Netherlands, UK).
 - [CIC Powerbox Alternative: What to Consider](https://novabess.com/blog/cic-powerbox-alternative.html): Buyer's framework for commercial & industrial portable power — generic CIC boxes vs NovaBESS PowerBox vs diesel generator vs consumer station on capacity, certs (CE/UN38.3/UL/IEC), noise, cost and safe use.
+- [CIC Powerbox Alternative — Australia](https://novabess.com/blog/cic-powerbox-alternative-australia.html): AU buyer's framework — RCM/IECEx, mining, Outback telecom and remote construction; generic CIC box vs NovaBESS PowerBox vs generator vs consumer station.
+- [CIC Powerbox Alternative — North America](https://novabess.com/blog/cic-powerbox-alternative-north-america.html): US & Canada buyer's framework — UL 2743, CSA, cold-climate mining and telecom; portable power station certs and duty fit.
+- [CIC Powerbox Alternative — Europe](https://novabess.com/blog/cic-powerbox-alternative-europe.html): Germany & UK buyer's framework — CE/UKCA, TA Lärm noise limits, UK red-diesel phase-out; battery vs generator for sites and events.
 
 ## Resources
 - [BESS Certifications Explained](https://novabess.com/resources/bess-certifications-explained.html): What IEC 62619, UN38.3, CE and UL mean, and which markets each unlocks.
