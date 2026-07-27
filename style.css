@@ -259,3 +259,47 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 540px) {
   .concept-grid { grid-template-columns: 1fr; }
 }
+
+/* ===== PowerBox C&I page additions ===== */
+/* Breadcrumb */
+.breadcrumb { background: var(--bg-soft); border-bottom: 1px solid var(--line); }
+.breadcrumb .container { padding-top: 12px; padding-bottom: 12px; }
+.breadcrumb ol { list-style: none; display: flex; flex-wrap: wrap; gap: 6px 8px; margin: 0; padding: 0; font-size: 14px; color: var(--muted); }
+.breadcrumb li::after { content: "›"; margin-left: 8px; color: var(--line); }
+.breadcrumb li:last-child::after { content: ""; }
+.breadcrumb a { color: var(--navy-2); text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+.breadcrumb .current { color: var(--ink); font-weight: 600; }
+
+/* PowerBox platform gallery (3 real product shots) */
+.pb-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 26px; }
+.pb-gallery figure { margin: 0; }
+.pb-gallery img { width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--line); background: #fff; }
+.pb-gallery figcaption { font-size: 13px; color: var(--muted); margin-top: 6px; text-align: center; }
+
+/* Mini factory / QC gallery (trust proof) */
+.mini-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 26px; }
+.mini-gallery figure { margin: 0; background: #fff; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.mini-gallery img { width: 100%; height: auto; display: block; }
+.mini-gallery figcaption { font-size: 13px; color: var(--muted); padding: 8px 10px; }
+
+/* Responsive tables -> stacked cards (no horizontal scroll) */
+@media (max-width: 760px) {
+  .ctable, .ctable tbody { display: block; width: 100%; }
+  .ctable thead { display: none; }
+  .ctable tr { display: block; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; margin-bottom: 14px; }
+  .ctable td { display: flex; justify-content: space-between; gap: 14px; padding: 5px 0; border: none; }
+  .ctable tr td:first-child { font-weight: 700; color: var(--navy-2); border-bottom: 1px solid var(--line); padding-bottom: 8px; margin-bottom: 6px; }
+  .ctable td:not(:first-child)::before { content: attr(data-label); color: var(--muted); font-size: 13px; flex: 0 0 auto; text-align: left; }
+  .spec, .spec tbody, .spec tr, .spec th, .spec td { display: block; width: 100%; }
+  .spec tr { display: flex; justify-content: space-between; gap: 12px; padding: 6px 0; border-bottom: 1px dashed var(--line); }
+  .spec tr:last-child { border-bottom: none; }
+  .spec th { background: transparent; color: var(--muted); width: auto; padding: 0; }
+  .spec td { background: transparent; padding: 0; text-align: right; }
+}
+@media (max-width: 560px) {
+  .pb-gallery, .mini-gallery { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 400px) {
+  .pb-gallery, .mini-gallery { grid-template-columns: 1fr; }
+}
