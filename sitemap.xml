@@ -299,4 +299,11 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://novabess.com/blog/cic-powerbox-alternative.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://novabess.com/blog/cic-powerbox-alternative.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://novabess.com/blog/cic-powerbox-alternative.html"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
